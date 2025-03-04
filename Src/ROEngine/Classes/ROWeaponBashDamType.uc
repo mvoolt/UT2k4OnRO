@@ -1,0 +1,1 @@
+class ROWeaponBashDamType extends ROWeaponDamageType;

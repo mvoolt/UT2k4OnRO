@@ -1,0 +1,1 @@
+class ROWeaponBayonetDamType extends ROWeaponDamageType;
