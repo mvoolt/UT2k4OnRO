@@ -9,6 +9,7 @@ class xDeathMatch extends DeathMatch;
 #exec OBJ LOAD FILE=WeaponStaticMesh.usx
 #exec OBJ LOAD FILE=NewWeaponPickups.usx
 #exec OBJ LOAD FILE="..\Textures\AW-2004Particles.utx"
+#exec OBJ LOAD FILE="..\Textures\DeRez.utx"
 #exec OBJ LOAD FILE=intro_characters.utx
 #exec OBJ LOAD FILE=DemoPlayerSkins.utx
 #exec OBJ LOAD FILE=PlayerSkins.utx

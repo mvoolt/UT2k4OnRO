@@ -132,7 +132,7 @@ simulated function Explode(vector HitLocation,vector HitNormal)
 	Destroy();
 }
 
-event TakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType)
+event TakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType, optional int HitIndex)
 {
     if (DamageType == ComboDamageType)
     {

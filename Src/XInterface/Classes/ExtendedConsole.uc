@@ -116,7 +116,7 @@ var transient GUIPage ChatMenu;
 var bool bTeamChatOnly;
 
 // RO
-//var transient UT2MusicManager MusicManager;				// Obsolete
+var transient UT2MusicManager MusicManager;
 var config string StatsPromptMenuClass;		// Menu that appears when connecting to a stats enabled server
 var config string MusicManagerClassName;
 var config string WaitingGameClassName;

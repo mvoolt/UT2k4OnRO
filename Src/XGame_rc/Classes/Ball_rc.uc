@@ -8,6 +8,3 @@ class Ball_rc extends Resource;
 #exec STATICMESH IMPORT NAME=BallMesh FILE=Models\Ball.lwo COLLISION=0
 #exec STATICMESH IMPORT NAME=BombEffectMesh FILE=..\xeffects\Models\bombeffect.lwo COLLISION=0
 
-defaultproperties
-{
-}

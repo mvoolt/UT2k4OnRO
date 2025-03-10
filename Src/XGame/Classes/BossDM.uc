@@ -43,5 +43,5 @@ defaultproperties
      bForceRespawn=True
      bAdjustSkill=True
      GameName="Championship Match"
-     Acronym=
+     Acronym=""
 }

@@ -2,7 +2,7 @@ class DMStatsScreen extends Scoreboard;
 
 // if _RO_
 // else
-//#EXEC OBJ LOAD FILE=InterfaceContent.utx
+#EXEC OBJ LOAD FILE=InterfaceContent.utx
 // end if _RO_
 
 var UnrealPlayer PlayerOwner;
@@ -91,9 +91,8 @@ simulated event DrawScoreboard( Canvas C )
 		AwardsNum++;
 	if ( PRI.ranovercount >= 10 )
 		AwardsNum++;
-	// if _RO_
-	//if ( PRI.DaredevilPoints > 0 )
-	//	AwardsNum++;
+	if ( PRI.DaredevilPoints > 0 )
+		AwardsNum++;
 	if ( PRI.GoalsScored >= 3 )
 		AwardsNum++;
 
@@ -259,15 +258,14 @@ simulated event DrawScoreboard( Canvas C )
 				OffsetY += LargeYL;
 			C.SetPos(AwardX + (AwardsNum%3)*AwardsBoxX*0.33,OffsetY);
 		}
-		// if _RO_
-//		if ( PRI.DaredevilPoints > 0 )
-//		{
-//			C.DrawText(DaredevilString@MakeColorCode(HUDClass.default.GoldColor)$PRI.DaredevilPoints);
-//			AwardsNum++;
-//			if ( AwardsNum%3 == 0 )
-//				OffsetY += LargeYL;
-//			C.SetPos(AwardX + (AwardsNum%3)*AwardsBoxX*0.33,OffsetY);
-//		}
+		if ( PRI.DaredevilPoints > 0 )
+		{
+			C.DrawText(DaredevilString@MakeColorCode(HUDClass.default.GoldColor)$PRI.DaredevilPoints);
+			AwardsNum++;
+			if ( AwardsNum%3 == 0 )
+				OffsetY += LargeYL;
+			C.SetPos(AwardX + (AwardsNum%3)*AwardsBoxX*0.33,OffsetY);
+		}
 	}
 
 	if ( CombosNum > 0 )

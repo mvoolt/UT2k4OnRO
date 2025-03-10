@@ -89,7 +89,7 @@ simulated function PlayIdleClosed()
 auto state Sleeping
 {
 	function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation,
-					Vector momentum, class<DamageType> damageType)
+					Vector momentum, class<DamageType> damageType, optional int HitIndex)
 	{
 		if ( Role == Role_Authority )
 			AwakeSentinel();
@@ -185,7 +185,7 @@ state Closing
 	}
 
 	function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation,
-						Vector momentum, class<DamageType> damageType);
+						Vector momentum, class<DamageType> damageType, optional int HitIndex);
 }
 
 state Opening
@@ -198,7 +198,7 @@ state Opening
 	}
 
 	function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation,
-						Vector momentum, class<DamageType> damageType);
+						Vector momentum, class<DamageType> damageType, optional int HitIndex);
 }
 
 defaultproperties

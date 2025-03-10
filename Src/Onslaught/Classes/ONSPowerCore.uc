@@ -404,7 +404,7 @@ function DisableObjective(Pawn Instigator)
 	TriggerEvent(Event, self, Instigator);
 }
 
-function TakeDamage(int Damage, Pawn instigatedBy, Vector hitlocation, Vector momentum, class<DamageType> damageType)
+function TakeDamage(int Damage, Pawn instigatedBy, Vector hitlocation, Vector momentum, class<DamageType> damageType, optional int HitIndex)
 {
 	local Controller InstigatorController;
 
@@ -1162,7 +1162,7 @@ function CheckTouching()
 
 state NeutralCore
 {
-    function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation, Vector momentum, class<DamageType> damageType)
+    function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation, Vector momentum, class<DamageType> damageType, optional int HitIndex)
 	{
 	}
 
@@ -1380,7 +1380,7 @@ defaultproperties
      bPlayCriticalAssaultAlarm=False
      DefensePriority=10
      Score=10
-     DestructionMessage=
+     DestructionMessage=""
      ObjectiveStringSuffix=" PowerCore"
      DrawType=DT_StaticMesh
      StaticMesh=StaticMesh'VMStructures.CoreGroup.CoreDivided'

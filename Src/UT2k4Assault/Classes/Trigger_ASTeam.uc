@@ -59,7 +59,7 @@ function Touch( actor Other )
 }
 
 function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation, 
-						Vector momentum, class<DamageType> damageType)
+						Vector momentum, class<DamageType> damageType, optional int HitIndex)
 {
 	if ( (InstigatedBy != None) && Level.Game.bTeamGame
 		&& Level.Game.IsOnTeam(InstigatedBy.Controller, GetAssaultTeamIndex()) )

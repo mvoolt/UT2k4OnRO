@@ -713,7 +713,7 @@ simulated function Bump( Actor Other )
 	}
 }
 
-function TakeDamage(int Damage, Pawn instigatedBy, Vector hitlocation, Vector momentum, class<DamageType> damageType)
+function TakeDamage(int Damage, Pawn instigatedBy, Vector hitlocation, Vector momentum, class<DamageType> damageType, optional int HitIndex)
 {
 	if ( bHumanShip && (Level.NetMode != NM_Client) )
 	{
@@ -922,7 +922,7 @@ state ShotDown
 	singular function BaseChange() {	}
 	function Died(Controller Killer, class<DamageType> damageType, vector HitLocation) {}
 	function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation,
-							Vector momentum, class<DamageType> damageType) {}
+							Vector momentum, class<DamageType> damageType, optional int HitIndex) {}
 
 	function VehicleSwitchView(bool bUpdating) {}
 	function DriverDied();

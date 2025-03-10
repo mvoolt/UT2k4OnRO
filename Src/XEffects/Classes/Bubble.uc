@@ -36,13 +36,14 @@ simulated function BeginPlay()
 defaultproperties
 {
      DrawType=DT_Mesh
-     Physics=PHYS_Falling
-     RemoteRole=ROLE_SimulatedProxy
-     LifeSpan=2.000000
-     Mesh=VertMesh'XEffects.SBubbles'
-     Texture=Texture'XEffects.S_bubble1'
-     DrawScale=0.200000
      Style=STY_Translucent
+     Texture=Texture'S_bubble1'
+     Mesh=Mesh'SBubbles'
+     DrawScale=0.200000
+     bUnlit=True
      Mass=3.000000
      Buoyancy=5.000000
+	 Physics=PHYS_Falling
+     LifeSpan=2.000000
+     RemoteRole=ROLE_SimulatedProxy
 }

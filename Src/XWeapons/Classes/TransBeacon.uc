@@ -137,7 +137,7 @@ simulated function Timer()
         Flare.Destroy();
 }
 
-function TakeDamage(int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType)
+function TakeDamage(int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType, optional int HitIndex)
 {
     if ( Level.Game.bTeamGame && (EventInstigator != None)
 		&& (EventInstigator.PlayerReplicationInfo != None)

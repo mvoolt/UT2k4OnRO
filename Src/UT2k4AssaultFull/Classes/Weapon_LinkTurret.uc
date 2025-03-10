@@ -121,7 +121,7 @@ defaultproperties
      bCanThrow=False
      bNoInstagibReplace=True
      OldMesh=None
-     OldPickup=
+     OldPickup=""
      EffectOffset=(X=0.000000,Y=0.000000,Z=0.000000)
      DisplayFOV=90.000000
      Priority=1

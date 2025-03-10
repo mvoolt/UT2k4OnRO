@@ -43,7 +43,7 @@ simulated function Destroyed()
 	Super.Destroyed();
 }
 
-function TakeDamage(int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType)
+function TakeDamage(int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType, optional int HitIndex)
 {
 	if (DamageType == class'DamTypeShockBeam')
 	{

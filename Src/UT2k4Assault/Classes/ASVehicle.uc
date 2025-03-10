@@ -38,7 +38,7 @@ var vector BotError;
 var Actor OldTarget;
 
 // Function override
-function PlayHit(float Damage, Pawn InstigatedBy, vector HitLocation, class<DamageType> damageType, vector Momentum) {}
+function PlayHit(float Damage, Pawn InstigatedBy, vector HitLocation, class<DamageType> damageType, vector Momentum, optional int HitIndex) {}
 function ClientDying(class<DamageType> DamageType, vector HitLocation) {}
 simulated function Tick(float DeltaTime);
 
@@ -177,7 +177,7 @@ simulated function bool StopWeaponFiring()
 }
 
 function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation,
-						Vector momentum, class<DamageType> damageType)
+						Vector momentum, class<DamageType> damageType, optional int HitIndex)
 {
 	local int			actualDamage;
 	local bool			bAlreadyDead;
@@ -329,7 +329,7 @@ ignores Trigger, Bump, HitWall, HeadVolumeChange, PhysicsVolumeChange, Falling, 
 	singular function BaseChange() {	}
 	function Died(Controller Killer, class<DamageType> damageType, vector HitLocation) {}
 	function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation,
-							Vector momentum, class<DamageType> damageType) {}
+							Vector momentum, class<DamageType> damageType, optional int HitIndex) {}
 
 	function UpdateRocketAcceleration(float DeltaTime, float YawChange, float PitchChange) 	{ }
 	function VehicleSwitchView(bool bUpdating) {}

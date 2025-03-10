@@ -526,7 +526,7 @@ simulated event OnDaredevil()
 	}
 }
 
-function int LimitPitch(int pitch)
+function int LimitPitch(int pitch, optional float DeltaTime)
 {
 	if (bAllowAirControl && !bVehicleOnGround)
 		return pitch;

@@ -86,7 +86,7 @@ simulated function HitWall(vector HitNormal, actor Wall)
 }
 
 function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation,
-							Vector momentum, class<DamageType> damageType)
+							Vector momentum, class<DamageType> damageType, optional int HitIndex)
 {
 	if ( (Damage > 0) && ((InstigatedBy == None) || (InstigatedBy.Controller == None) || (Instigator == None) || (Instigator.Controller == None) || !InstigatedBy.Controller.SameTeamAs(Instigator.Controller)) )
 	{
@@ -139,7 +139,7 @@ function Timer()
 state Dying
 {
 	function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation,
-							Vector momentum, class<DamageType> damageType) {}
+							Vector momentum, class<DamageType> damageType, optional int HitIndex) {}
 	function Timer() {}
 
     function BeginState()

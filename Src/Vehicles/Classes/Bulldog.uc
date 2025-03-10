@@ -516,7 +516,7 @@ simulated function Tick(float Delta)
 
 // Really simple at the moment!
 function TakeDamage(int Damage, Pawn instigatedBy, Vector hitlocation,
-						Vector momentum, class<DamageType> damageType)
+						Vector momentum, class<DamageType> damageType, optional int HitIndex)
 {
 	// Avoid damage healing the car!
 	if(Damage < 0)

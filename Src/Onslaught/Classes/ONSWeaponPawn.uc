@@ -650,7 +650,7 @@ function Died(Controller Killer, class<DamageType> damageType, vector HitLocatio
 	Destroy();
 }
 
-event TakeDamage(int Damage, Pawn EventInstigator, Vector HitLocation, Vector Momentum, class<DamageType> DamageType)
+event TakeDamage(int Damage, Pawn EventInstigator, Vector HitLocation, Vector Momentum, class<DamageType> DamageType, optional int HitIndex)
 {
     if (bHasOwnHealth)
     	Super.TakeDamage(Damage, EventInstigator, HitLocation, Momentum, DamageType);
@@ -723,7 +723,7 @@ function bool HasUDamage()
 	return (Driver != None && Driver.HasUDamage());
 }
 
-function int LimitPitch(int pitch)
+function int LimitPitch(int pitch, optional float DeltaTime)
 {
 	if (VehicleBase == None || Gun == None)
 		return Super.LimitPitch(pitch);

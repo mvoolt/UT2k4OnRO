@@ -1098,7 +1098,7 @@ simulated event TeamChanged()
 	}
 }
 
-function TakeDamage(int Damage, Pawn instigatedBy, Vector Hitlocation, Vector Momentum, class<DamageType> DamageType)
+function TakeDamage(int Damage, Pawn instigatedBy, Vector Hitlocation, Vector Momentum, class<DamageType> DamageType, optional int HitIndex)
 {
 	if (UpsideDownDamage == 0 && DamageType != class'DamTypeONSVehicle' && NeedsFlip())
 		Damage = Health;
@@ -1477,7 +1477,7 @@ simulated event SVehicleUpdateParams()
 	}
 }
 
-function int LimitPitch(int pitch)
+function int LimitPitch(int pitch, optional float DeltaTime)
 {
 	if (ActiveWeapon >= Weapons.length)
 		return Super.LimitPitch(pitch);
@@ -1546,7 +1546,7 @@ simulated function DrawHUD(Canvas Canvas)
         ActivateOverlay(False);
 }
 
-function PlayHit(float Damage, Pawn InstigatedBy, vector HitLocation, class<DamageType> damageType, vector Momentum)
+function PlayHit(float Damage, Pawn InstigatedBy, vector HitLocation, class<DamageType> damageType, vector Momentum, optional int HitIndex)
 {
 	local int i;
 

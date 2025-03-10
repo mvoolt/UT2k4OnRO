@@ -9,7 +9,7 @@ class DECO_SpaceFighter extends Decoration;
 function Landed(vector HitNormal);
 function HitWall (vector HitNormal, actor Wall);
 function TakeDamage( int NDamage, Pawn instigatedBy, Vector hitlocation, 
-					Vector momentum, class<DamageType> damageType);
+					Vector momentum, class<DamageType> damageType, optional int HitIndex);
 singular function PhysicsVolumeChange( PhysicsVolume NewVolume );
 function Trigger( actor Other, pawn EventInstigator );
 singular function BaseChange();

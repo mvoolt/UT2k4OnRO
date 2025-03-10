@@ -12,12 +12,14 @@ event PostBeginPlay()
 
 defaultproperties
 {
-     InitialRot=(Roll=16384)
-     FadeInterp=(OutTime=0.900000)
-     ScaleInterp=(Start=0.400000,Mid=1.600000,End=0.200000,InTime=0.400000,OutTime=0.400000,InStyle=IS_InvExp,OutStyle=IS_InvExp)
-     DrawType=DT_Mesh
-     Mesh=VertMesh'XEffects.ShockVortexMesh'
-     Skins(0)=FinalBlend'XEffectMat.Shock.ShockElecRingFB'
-     bUnlit=True
-     bAlwaysFaceCamera=True
-}
+    DrawType=DT_Mesh
+    Mesh=VertMesh'ShockVortexMesh'
+    Skins(0)=FinalBlend'XEffectMat.ShockElecRingFB'
+    bUnlit=true
+    bAlwaysFaceCamera=true
+
+    LifeTime=1.0
+    FadeInterp=(InTime=0.0,InStyle=IS_Linear,OutTime=0.9,OutStyle=IS_Linear)
+    ScaleInterp=(Start=0.4,Mid=1.6,End=0.2,InTime=0.4,InStyle=IS_InvExp,OutTime=0.4,OutStyle=IS_InvExp)
+    InitialRot=(Roll=16384)
+}                      

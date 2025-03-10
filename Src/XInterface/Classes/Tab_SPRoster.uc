@@ -321,440 +321,485 @@ function PositionChange(GUIComponent Sender)
 }
 
 defaultproperties
-{
-     MessageNoInfo="No information available."
-     PostStatsMessage="Stats"
-     bFillHeight=True
-     Begin Object Class=GUIImage Name=SPRosterBK0
-         Image=Texture'InterfaceContent.Menu.BorderBoxD'
-         ImageColor=(A=160)
-         ImageStyle=ISTY_Stretched
-         WinTop=0.015000
-         WinLeft=0.007187
-         WinWidth=0.565117
-         WinHeight=0.700000
-     End Object
-     Controls(0)=GUIImage'XInterface.Tab_SPRoster.SPRosterBK0'
+{	
+	// box to go around selected-character information
+	Begin Object class=GUIImage Name=SPRosterBK0
+		WinWidth=0.565117
+		WinHeight=0.70
+		WinLeft=0.007187
+		WinTop=0.015
+		Image=Material'InterfaceContent.Menu.BorderBoxD'
+		ImageColor=(R=255,G=255,B=255,A=160);
+		ImageRenderStyle=MSTY_Alpha
+		ImageStyle=ISTY_Stretched
+	End Object
+	
+	// portrait of the selected character
+	Begin Object class=GUIImage Name=SPRosterPortrait
+		WinWidth=0.130957
+		WinHeight=0.395000
+		WinLeft=0.016562
+		WinTop=0.031077
+		Image=Material'InterfaceContent.Menu.BorderBoxD'
+		ImageColor=(R=255,G=255,B=255,A=255);
+		ImageRenderStyle=MSTY_Normal
+		ImageStyle=ISTY_Scaled
+	End Object
 
-     Begin Object Class=GUIImage Name=SPRosterPortrait
-         Image=Texture'InterfaceContent.Menu.BorderBoxD'
-         ImageStyle=ISTY_Scaled
-         ImageRenderStyle=MSTY_Normal
-         WinTop=0.031077
-         WinLeft=0.016562
-         WinWidth=0.130957
-         WinHeight=0.395000
-     End Object
-     Controls(1)=GUIImage'XInterface.Tab_SPRoster.SPRosterPortrait'
+	// cool border for the close-up portrait
+	Begin Object class=GUIImage Name=SPRosterPortraitBorder
+		WinWidth=0.1333
+		WinHeight=0.40
+		WinLeft=0.015
+		WinTop=0.03
+		Image=Material'InterfaceContent.Menu.BorderBoxA1'
+		ImageColor=(R=255,G=255,B=255,A=255);
+		ImageRenderStyle=MSTY_Normal
+		ImageStyle=ISTY_Stretched
+	End Object
 
-     Begin Object Class=GUIImage Name=SPRosterPortraitBorder
-         Image=Texture'InterfaceContent.Menu.BorderBoxA1'
-         ImageStyle=ISTY_Stretched
-         ImageRenderStyle=MSTY_Normal
-         WinTop=0.030000
-         WinLeft=0.015000
-         WinWidth=0.133300
-         WinHeight=0.400000
-     End Object
-     Controls(2)=GUIImage'XInterface.Tab_SPRoster.SPRosterPortraitBorder'
+	// player's team roster
+	Begin Object class=GUICharacterListTeam Name=SPRosterCharList
+		Hint="Choose a teammate to play in the next match"
+		WinWidth=0.670315
+		WinHeight=0.170000
+		WinLeft=0.004688
+		WinTop=0.73
+		StyleName="CharButton"
+		OnChange=CharListClick
+		bFillBounds=true
+		FixedItemsPerPage=7
+		bLocked=true
+		bIgnoreBackClick=true
+		bAllowSelectEmpty=false
+		DefaultPortrait=Material'InterfaceContent.pEmptySlot'
+	End Object
 
-     Begin Object Class=GUILabel Name=SPMatchData
-         Caption="No Game Profile => No MatchData"
-         TextAlign=TXTA_Center
-         TextColor=(B=255,G=255,R=255)
-         TextFont="UT2LargeFont"
-         WinTop=-0.120000
-         WinLeft=0.100000
-         WinWidth=0.800000
-         WinHeight=0.100000
-         bVisible=False
-     End Object
-     Controls(3)=GUILabel'XInterface.Tab_SPRoster.SPMatchData'
+	// match description
+	Begin Object class=GUILabel Name=SPMatchData
+		Caption="No Game Profile => No MatchData"
+		TextALign=TXTA_Center
+		TextFont="UT2LargeFont"
+		TextColor=(R=255,G=255,B=255,A=255)
+		WinWidth=0.800000
+		WinHeight=0.100000
+		WinLeft=0.10
+		WinTop=-0.12
+		bVisible=false
+	End Object
 
-     Begin Object Class=GUIScrollTextBox Name=SPCharData
-         CharDelay=0.040000
-         EOLDelay=0.250000
-         OnCreateComponent=SPCharData.InternalOnCreateComponent
-         Hint="Team members profile"
-         WinTop=0.030000
-         WinLeft=0.150000
-         WinWidth=0.412500
-         WinHeight=0.400000
-         bNeverFocus=True
-     End Object
-     Controls(4)=GUIScrollTextBox'XInterface.Tab_SPRoster.SPCharData'
+	// char data decotext
+	Begin Object class=GUIScrollTextBox Name=SPCharData
+		Hint="Team members profile"
+		TextAlign=TXTA_Left
+		WinWidth=0.412500
+		WinHeight=0.40
+		WinLeft=0.15
+		WinTop=0.03
+		CharDelay=0.04
+		EOLDelay=0.25
+		bNeverFocus=true
+	End Object
 
-     Begin Object Class=GUIListBox Name=SPCharStats
-         OnCreateComponent=SPCharStats.InternalOnCreateComponent
-         WinTop=0.440000
-         WinLeft=0.015000
-         WinWidth=0.510000
-         WinHeight=0.267500
-         bAcceptsInput=False
-         bNeverFocus=True
-     End Object
-     Controls(5)=GUIListBox'XInterface.Tab_SPRoster.SPCharStats'
+	// char stats
+	Begin Object class=GUIListBox Name=SPCharStats
+		//TextFont="UT2SmallFont"
+		//TextColor=(R=255,G=255,B=255,A=255)
+		WinWidth=0.51
+		WinHeight=0.267500
+		WinLeft=0.015
+		WinTop=0.44
+		bNeverFocus=true
+		bAcceptsInput=false
+	End Object
 
-     Begin Object Class=GUICharacterListTeam Name=SPRosterCharList
-         bLocked=True
-         DefaultPortrait=TexPanner'InterfaceContent.Menu.pEmptySlot'
-         bFillBounds=True
-         bAllowSelectEmpty=False
-         FixedItemsPerPage=7
-         StyleName="CharButton"
-         Hint="Choose a teammate to play in the next match"
-         WinTop=0.730000
-         WinLeft=0.004688
-         WinWidth=0.670315
-         WinHeight=0.170000
-         OnClick=SPRosterCharList.InternalOnClick
-         OnRightClick=SPRosterCharList.InternalOnRightClick
-         OnMousePressed=SPRosterCharList.InternalOnMousePressed
-         OnMouseRelease=SPRosterCharList.InternalOnMouseRelease
-         OnChange=Tab_SPRoster.CharListClick
-         OnKeyEvent=SPRosterCharList.InternalOnKeyEvent
-         OnBeginDrag=SPRosterCharList.InternalOnBeginDrag
-         OnEndDrag=SPRosterCharList.InternalOnEndDrag
-         OnDragDrop=SPRosterCharList.InternalOnDragDrop
-         OnDragEnter=SPRosterCharList.InternalOnDragEnter
-         OnDragLeave=SPRosterCharList.InternalOnDragLeave
-         OnDragOver=SPRosterCharList.InternalOnDragOver
-     End Object
-     Controls(6)=GUICharacterListTeam'XInterface.Tab_SPRoster.SPRosterCharList'
+	// border to go around char selector
+	Begin Object class=GUIImage Name=SPCharListBox
+		WinWidth=0.622268
+		WinHeight=0.186797
+		WinLeft=0.006836
+		WinTop=0.722
+		Image=Material'InterfaceContent.Menu.BorderBoxD'
+		ImageColor=(R=255,G=255,B=255,A=160);
+		ImageRenderStyle=MSTY_Alpha
+		ImageStyle=ISTY_Stretched
+	End Object
 
-     Begin Object Class=GUIImage Name=SPCharListBox
-         Image=Texture'InterfaceContent.Menu.BorderBoxD'
-         ImageColor=(A=160)
-         ImageStyle=ISTY_Stretched
-         WinTop=0.722000
-         WinLeft=0.006836
-         WinWidth=0.622268
-         WinHeight=0.186797
-     End Object
-     Controls(7)=GUIImage'XInterface.Tab_SPRoster.SPCharListBox'
+///////////////////////////////////////////////
+//
+// Team Mate #1
+//
+//
+	Begin Object class=GUIImage Name=Mate1Back
+		WinWidth=1.0
+		WinHeight=1.0
+		WinLeft=0
+		WinTop=0
+		Image=Material'InterfaceContent.Menu.BorderBoxD'
+		ImageColor=(R=255,G=255,B=255,A=160);
+		ImageRenderStyle=MSTY_Alpha
+		ImageStyle=ISTY_Stretched
+		Tag=0
+	End Object
+	// portrait of the teammate #1
+	Begin Object class=GUIGfxButton Name=imgMate1
+		WinWidth=0.14
+		WinHeight=0.896118
+		WinLeft=0.018244
+		WinTop=0.052442
+	    Position=ICP_Scaled
+		Graphic=Material'InterfaceContent.Menu.BorderBoxD'
+	End Object
+	
+	Begin Object class=GUILabel Name=lblMate1
+		Caption="Name"
+		TextALign=TXTA_Center
+		TextFont="UT2SmallFont"
+		TextColor=(R=255,G=255,B=255,A=255)
+		WinWidth=0.797917
+		WinHeight=0.213511
+		WinLeft=0.174012
+		WinTop=0.249487
+	End Object
 
-     Begin Object Class=GUIPanel Name=pnlMates1
-         Begin Object Class=GUIImage Name=Mate1Back
-             Image=Texture'InterfaceContent.Menu.BorderBoxD'
-             ImageColor=(A=160)
-             ImageStyle=ISTY_Stretched
-             WinHeight=1.000000
-             Tag=0
-         End Object
-         Controls(0)=GUIImage'XInterface.Tab_SPRoster.Mate1Back'
+	Begin Object class=GUIComboBox Name=cboMate1
+		Hint="Set starting position - change with voice menu during match"
+		WinHeight=0.234660
+		WinTop=0.567351
+		WinWidth=0.554010
+		WinLeft=0.323564
+		OnChange=PositionChange
+	End Object
 
-         Begin Object Class=GUIGFXButton Name=imgMate1
-             Graphic=Texture'InterfaceContent.Menu.BorderBoxD'
-             Position=ICP_Scaled
-             WinTop=0.052442
-             WinLeft=0.018244
-             WinWidth=0.140000
-             WinHeight=0.896118
-             OnKeyEvent=imgMate1.InternalOnKeyEvent
-         End Object
-         Controls(1)=GUIGFXButton'XInterface.Tab_SPRoster.imgMate1'
+	Begin Object class=GUIGFXButton Name=btnMate1
+		Graphic=Material'InterfaceContent.Menu.YellowArrowVBand'
+		Hint="Assign the selected team member to this roster"
+		Position=ICP_Scaled
+		bClientBound=true
+		WinWidth=0.058350
+		WinHeight=0.901195
+		WinLeft=0.012050
+		WinTop=0.046398
+		StyleName="RosterButton"
+		OnClick=FixLineup
+		Tag=0
+	End Object
 
-         Begin Object Class=GUILabel Name=lblMate1
-             Caption="Name"
-             TextAlign=TXTA_Center
-             TextColor=(B=255,G=255,R=255)
-             TextFont="UT2SmallFont"
-             WinTop=0.249487
-             WinLeft=0.174012
-             WinWidth=0.797917
-             WinHeight=0.213511
-         End Object
-         Controls(2)=GUILabel'XInterface.Tab_SPRoster.lblMate1'
+	Begin Object class=GUILabel Name=lblNA1
+		Caption="SLOT NOT AVAILABLE"
+		TextALign=TXTA_Center
+		TextFont="UT2SmallFont"
+		TextColor=(R=255,G=255,B=255,A=255)
+		WinWidth=1.0
+		WinHeight=0.21
+		WinLeft=0.0
+		WinTop=0.42
+	End Object
 
-         Begin Object Class=GUIComboBox Name=cboMate1
-             Hint="Set starting position - change with voice menu during match"
-             WinTop=0.567351
-             WinLeft=0.323564
-             WinWidth=0.554010
-             WinHeight=0.234660
-             OnChange=Tab_SPRoster.PositionChange
-             OnKeyEvent=cboMate1.InternalOnKeyEvent
-         End Object
-         Controls(3)=GUIComboBox'XInterface.Tab_SPRoster.cboMate1'
+	Begin Object class=GUIPanel Name=pnlMates1
+		WinWidth=0.40
+		WinHeight=0.175
+		WinLeft=0.59
+		WinTop=0.015
+		StyleName="NoBackground"
+		Controls(0)=Mate1Back
+		Controls(1)=imgMate1
+		Controls(2)=lblMate1
+		Controls(3)=cboMate1
+		Controls(4)=btnMate1
+		Controls(5)=lblNA1
+	End Object
 
-         Begin Object Class=GUIGFXButton Name=btnMate1
-             Graphic=Texture'InterfaceContent.SPMenu.YellowArrowVBand'
-             Position=ICP_Scaled
-             bClientBound=True
-             StyleName="RosterButton"
-             Hint="Assign the selected team member to this roster"
-             WinTop=0.046398
-             WinLeft=0.012050
-             WinWidth=0.058350
-             WinHeight=0.901195
-             Tag=0
-             OnClick=Tab_SPRoster.FixLineup
-             OnKeyEvent=btnMate1.InternalOnKeyEvent
-         End Object
-         Controls(4)=GUIGFXButton'XInterface.Tab_SPRoster.btnMate1'
+///////////////////////////////////////////////
+//
+// Team Mate #2
+//
+//
+	// box to go around teammate #2
+	Begin Object class=GUIImage Name=Mate2Back
+		WinWidth=1.0
+		WinHeight=1.0
+		WinLeft=0
+		WinTop=0
+		Image=Material'InterfaceContent.Menu.BorderBoxD'
+		ImageColor=(R=255,G=255,B=255,A=160);
+		ImageRenderStyle=MSTY_Alpha
+		ImageStyle=ISTY_Stretched
+		Tag=1
+	End Object
+	// portrait of the teammate #2
+	Begin Object class=GUIGfxButton Name=imgMate2
+		WinWidth=0.14
+		WinHeight=0.896118
+		WinLeft=0.018244
+		WinTop=0.052442
+	    Position=ICP_Scaled
+		Graphic=Material'InterfaceContent.Menu.BorderBoxD'
+	End Object
+	Begin Object class=GUILabel Name=lblMate2
+		Caption="Name"
+		TextALign=TXTA_Center
+		TextFont="UT2SmallFont"
+		TextColor=(R=255,G=255,B=255,A=255)
+		WinWidth=0.797917
+		WinHeight=0.213511
+		WinLeft=0.174012
+		WinTop=0.249487
+	End Object
 
-         Begin Object Class=GUILabel Name=lblNA1
-             Caption="SLOT NOT AVAILABLE"
-             TextAlign=TXTA_Center
-             TextColor=(B=255,G=255,R=255)
-             TextFont="UT2SmallFont"
-             WinTop=0.420000
-             WinHeight=0.210000
-         End Object
-         Controls(5)=GUILabel'XInterface.Tab_SPRoster.lblNA1'
+	Begin Object class=GUIComboBox Name=cboMate2
+		Hint="Set starting position - change with voice menu during match"
+		WinHeight=0.234660
+		WinTop=0.567351
+		WinWidth=0.554010
+		WinLeft=0.323564
+		OnChange=PositionChange
+	End Object
 
-         StyleName="NoBackground"
-         WinTop=0.015000
-         WinLeft=0.590000
-         WinWidth=0.400000
-         WinHeight=0.175000
-     End Object
-     Controls(8)=GUIPanel'XInterface.Tab_SPRoster.pnlMates1'
+	Begin Object class=GUIGFXButton Name=btnMate2
+		Graphic=Material'InterfaceContent.Menu.YellowArrowVBand'
+		Hint="Assign the selected team member to this roster"
+		Position=ICP_Scaled
+		bClientBound=true
+		WinWidth=0.058350
+		WinHeight=0.901195
+		WinLeft=0.012050
+		WinTop=0.046398
+		StyleName="RosterButton"
+		OnClick=FixLineup
+		Tag=1
+	End Object
 
-     Begin Object Class=GUIPanel Name=pnlMates2
-         Begin Object Class=GUIImage Name=Mate2Back
-             Image=Texture'InterfaceContent.Menu.BorderBoxD'
-             ImageColor=(A=160)
-             ImageStyle=ISTY_Stretched
-             WinHeight=1.000000
-             Tag=1
-         End Object
-         Controls(0)=GUIImage'XInterface.Tab_SPRoster.Mate2Back'
+	Begin Object class=GUILabel Name=lblNA2
+		Caption="SLOT NOT AVAILABLE"
+		TextALign=TXTA_Center
+		TextFont="UT2SmallFont"
+		TextColor=(R=255,G=255,B=255,A=255)
+		WinWidth=1.0
+		WinHeight=0.21
+		WinLeft=0.0
+		WinTop=0.42
+	End Object
 
-         Begin Object Class=GUIGFXButton Name=imgMate2
-             Graphic=Texture'InterfaceContent.Menu.BorderBoxD'
-             Position=ICP_Scaled
-             WinTop=0.052442
-             WinLeft=0.018244
-             WinWidth=0.140000
-             WinHeight=0.896118
-             OnKeyEvent=imgMate2.InternalOnKeyEvent
-         End Object
-         Controls(1)=GUIGFXButton'XInterface.Tab_SPRoster.imgMate2'
+	Begin Object class=GUIPanel Name=pnlMates2
+		WinWidth=0.40
+		WinHeight=0.175
+		WinLeft=0.59
+		WinTop=0.19
+		StyleName="NoBackground"
+		Controls(0)=Mate2Back
+		Controls(1)=imgMate2
+		Controls(2)=lblMate2
+		Controls(3)=cboMate2
+		Controls(4)=btnMate2
+		Controls(5)=lblNA2
+	End Object
 
-         Begin Object Class=GUILabel Name=lblMate2
-             Caption="Name"
-             TextAlign=TXTA_Center
-             TextColor=(B=255,G=255,R=255)
-             TextFont="UT2SmallFont"
-             WinTop=0.249487
-             WinLeft=0.174012
-             WinWidth=0.797917
-             WinHeight=0.213511
-         End Object
-         Controls(2)=GUILabel'XInterface.Tab_SPRoster.lblMate2'
+///////////////////////////////////////////////
+//
+// Team Mate #3
+//
+//
+	Begin Object class=GUIImage Name=Mate3Back
+		WinWidth=1.0
+		WinHeight=1.0
+		WinLeft=0
+		WinTop=0
+		Image=Material'InterfaceContent.Menu.BorderBoxD'
+		ImageColor=(R=255,G=255,B=255,A=160);
+		ImageRenderStyle=MSTY_Alpha
+		ImageStyle=ISTY_Stretched
+	End Object
+	
+	Begin Object class=GUIGfxButton Name=imgMate3
+		WinWidth=0.14
+		WinHeight=0.896118
+		WinLeft=0.018244
+		WinTop=0.052442
+	    Position=ICP_Scaled
+		Graphic=Material'InterfaceContent.Menu.BorderBoxD'
+	End Object
+	
+	Begin Object class=GUILabel Name=lblMate3
+		Caption="Name"
+		TextALign=TXTA_Center
+		TextFont="UT2SmallFont"
+		TextColor=(R=255,G=255,B=255,A=255)
+		WinWidth=0.797917
+		WinHeight=0.213511
+		WinLeft=0.174012
+		WinTop=0.249487
+	End Object
 
-         Begin Object Class=GUIComboBox Name=cboMate2
-             Hint="Set starting position - change with voice menu during match"
-             WinTop=0.567351
-             WinLeft=0.323564
-             WinWidth=0.554010
-             WinHeight=0.234660
-             OnChange=Tab_SPRoster.PositionChange
-             OnKeyEvent=cboMate2.InternalOnKeyEvent
-         End Object
-         Controls(3)=GUIComboBox'XInterface.Tab_SPRoster.cboMate2'
+	Begin Object class=GUIComboBox Name=cboMate3
+		Hint="Set starting position - change with voice menu during match"
+		WinHeight=0.234660
+		WinTop=0.567351
+		WinWidth=0.554010
+		WinLeft=0.323564
+		OnChange=PositionChange
+	End Object
 
-         Begin Object Class=GUIGFXButton Name=btnMate2
-             Graphic=Texture'InterfaceContent.SPMenu.YellowArrowVBand'
-             Position=ICP_Scaled
-             bClientBound=True
-             StyleName="RosterButton"
-             Hint="Assign the selected team member to this roster"
-             WinTop=0.046398
-             WinLeft=0.012050
-             WinWidth=0.058350
-             WinHeight=0.901195
-             Tag=1
-             OnClick=Tab_SPRoster.FixLineup
-             OnKeyEvent=btnMate2.InternalOnKeyEvent
-         End Object
-         Controls(4)=GUIGFXButton'XInterface.Tab_SPRoster.btnMate2'
+	Begin Object class=GUIGFXButton Name=btnMate3
+		Graphic=Material'InterfaceContent.Menu.YellowArrowVBand'
+		Hint="Assign the selected team member to this roster"
+		Position=ICP_Scaled
+		bClientBound=true
+		WinWidth=0.058350
+		WinHeight=0.901195
+		WinLeft=0.012050
+		WinTop=0.046398
+		StyleName="RosterButton"
+		OnClick=FixLineup
+		Tag=2
+	End Object
 
-         Begin Object Class=GUILabel Name=lblNA2
-             Caption="SLOT NOT AVAILABLE"
-             TextAlign=TXTA_Center
-             TextColor=(B=255,G=255,R=255)
-             TextFont="UT2SmallFont"
-             WinTop=0.420000
-             WinHeight=0.210000
-         End Object
-         Controls(5)=GUILabel'XInterface.Tab_SPRoster.lblNA2'
+	Begin Object class=GUILabel Name=lblNA3
+		Caption="SLOT NOT AVAILABLE"
+		TextALign=TXTA_Center
+		TextFont="UT2SmallFont"
+		TextColor=(R=255,G=255,B=255,A=255)
+		WinWidth=1.0
+		WinHeight=0.21
+		WinLeft=0.0
+		WinTop=0.42
+	End Object
 
-         StyleName="NoBackground"
-         WinTop=0.190000
-         WinLeft=0.590000
-         WinWidth=0.400000
-         WinHeight=0.175000
-     End Object
-     Controls(9)=GUIPanel'XInterface.Tab_SPRoster.pnlMates2'
+	Begin Object class=GUIPanel Name=pnlMates3
+		WinWidth=0.40
+		WinHeight=0.175
+		WinLeft=0.59
+		WinTop=0.365
+		StyleName="NoBackground"
+		Controls(0)=Mate3Back
+		Controls(1)=imgMate3
+		Controls(2)=lblMate3
+		Controls(3)=cboMate3
+		Controls(4)=btnMate3
+		Controls(5)=lblNA3
+	End Object
 
-     Begin Object Class=GUIPanel Name=pnlMates3
-         Begin Object Class=GUIImage Name=Mate3Back
-             Image=Texture'InterfaceContent.Menu.BorderBoxD'
-             ImageColor=(A=160)
-             ImageStyle=ISTY_Stretched
-             WinHeight=1.000000
-         End Object
-         Controls(0)=GUIImage'XInterface.Tab_SPRoster.Mate3Back'
+///////////////////////////////////////////////
+//
+// Team Mate #4
+//
+//
+	// box to go around teammate #4
+	Begin Object class=GUIImage Name=Mate4Back
+		WinWidth=1.0
+		WinHeight=1.0
+		WinLeft=0
+		WinTop=0
+		Image=Material'InterfaceContent.Menu.BorderBoxD'
+		ImageColor=(R=255,G=255,B=255,A=160);
+		ImageRenderStyle=MSTY_Alpha
+		ImageStyle=ISTY_Stretched
+		Tag=3
+	End Object
+	// portrait of the teammate #4
+	Begin Object class=GUIGfxButton Name=imgMate4
+		WinWidth=0.14
+		WinHeight=0.896118
+		WinLeft=0.018244
+		WinTop=0.052442
+		Graphic=Material'InterfaceContent.Menu.BorderBoxD'
+	    Position=ICP_Scaled
+	End Object
 
-         Begin Object Class=GUIGFXButton Name=imgMate3
-             Graphic=Texture'InterfaceContent.Menu.BorderBoxD'
-             Position=ICP_Scaled
-             WinTop=0.052442
-             WinLeft=0.018244
-             WinWidth=0.140000
-             WinHeight=0.896118
-             OnKeyEvent=imgMate3.InternalOnKeyEvent
-         End Object
-         Controls(1)=GUIGFXButton'XInterface.Tab_SPRoster.imgMate3'
+	// teammate description 4
+	Begin Object class=GUILabel Name=lblMate4
+		Caption="Name"
+		TextALign=TXTA_Center
+		TextFont="UT2SmallFont"
+		TextColor=(R=255,G=255,B=255,A=255)
+		WinWidth=0.797917
+		WinHeight=0.213511
+		WinLeft=0.174012
+		WinTop=0.249487
+	End Object
 
-         Begin Object Class=GUILabel Name=lblMate3
-             Caption="Name"
-             TextAlign=TXTA_Center
-             TextColor=(B=255,G=255,R=255)
-             TextFont="UT2SmallFont"
-             WinTop=0.249487
-             WinLeft=0.174012
-             WinWidth=0.797917
-             WinHeight=0.213511
-         End Object
-         Controls(2)=GUILabel'XInterface.Tab_SPRoster.lblMate3'
+	Begin Object class=GUIComboBox Name=cboMate4
+		Hint="Set starting position - change with voice menu during match"
+		WinWidth=0.554010
+		WinHeight=0.234660
+		WinLeft=0.323564
+		WinTop=0.567351
+		OnChange=PositionChange
+	End Object
 
-         Begin Object Class=GUIComboBox Name=cboMate3
-             Hint="Set starting position - change with voice menu during match"
-             WinTop=0.567351
-             WinLeft=0.323564
-             WinWidth=0.554010
-             WinHeight=0.234660
-             OnChange=Tab_SPRoster.PositionChange
-             OnKeyEvent=cboMate3.InternalOnKeyEvent
-         End Object
-         Controls(3)=GUIComboBox'XInterface.Tab_SPRoster.cboMate3'
+	Begin Object class=GUIGFXButton Name=btnMate4
+		Graphic=Material'InterfaceContent.Menu.YellowArrowVBand'
+		Hint="Assign the selected team member to this roster"
+		Position=ICP_Scaled
+		bClientBound=true
+		WinWidth=0.058350
+		WinHeight=0.901195
+		WinLeft=0.012050
+		WinTop=0.046398
+		StyleName="RosterButton"
+		OnClick=FixLineup
+		Tag=3
+	End Object
 
-         Begin Object Class=GUIGFXButton Name=btnMate3
-             Graphic=Texture'InterfaceContent.SPMenu.YellowArrowVBand'
-             Position=ICP_Scaled
-             bClientBound=True
-             StyleName="RosterButton"
-             Hint="Assign the selected team member to this roster"
-             WinTop=0.046398
-             WinLeft=0.012050
-             WinWidth=0.058350
-             WinHeight=0.901195
-             Tag=2
-             OnClick=Tab_SPRoster.FixLineup
-             OnKeyEvent=btnMate3.InternalOnKeyEvent
-         End Object
-         Controls(4)=GUIGFXButton'XInterface.Tab_SPRoster.btnMate3'
+	Begin Object class=GUILabel Name=lblNA4
+		Caption="SLOT NOT AVAILABLE"
+		TextALign=TXTA_Center
+		TextFont="UT2SmallFont"
+		TextColor=(R=255,G=255,B=255,A=255)
+		WinWidth=1.0
+		WinHeight=0.21
+		WinLeft=0.0
+		WinTop=0.42
+	End Object
 
-         Begin Object Class=GUILabel Name=lblNA3
-             Caption="SLOT NOT AVAILABLE"
-             TextAlign=TXTA_Center
-             TextColor=(B=255,G=255,R=255)
-             TextFont="UT2SmallFont"
-             WinTop=0.420000
-             WinHeight=0.210000
-         End Object
-         Controls(5)=GUILabel'XInterface.Tab_SPRoster.lblNA3'
+	Begin Object class=GUIPanel Name=pnlMates4
+		WinWidth=0.40
+		WinHeight=0.175
+		WinLeft=0.59
+		WinTop=0.54
+		StyleName="NoBackground"
+		Controls(0)=Mate4Back
+		Controls(1)=imgMate4
+		Controls(2)=lblMate4
+		Controls(3)=cboMate4
+		Controls(4)=btnMate4
+		Controls(5)=lblNA4
+	End Object
 
-         StyleName="NoBackground"
-         WinTop=0.365000
-         WinLeft=0.590000
-         WinWidth=0.400000
-         WinHeight=0.175000
-     End Object
-     Controls(10)=GUIPanel'XInterface.Tab_SPRoster.pnlMates3'
+	// team stats
+	Begin Object class=GUIListBox Name=SPRTeamStats
+		WinWidth=0.338750
+		WinHeight=0.186797
+		WinLeft=0.654063
+		WinTop=0.722
+		bNeverFocus=true
+		bAcceptsInput=false
+	End Object
 
-     Begin Object Class=GUIPanel Name=pnlMates4
-         Begin Object Class=GUIImage Name=Mate4Back
-             Image=Texture'InterfaceContent.Menu.BorderBoxD'
-             ImageColor=(A=160)
-             ImageStyle=ISTY_Stretched
-             WinHeight=1.000000
-             Tag=3
-         End Object
-         Controls(0)=GUIImage'XInterface.Tab_SPRoster.Mate4Back'
+	Controls(0)=SPRosterBK0
+	Controls(1)=SPRosterPortrait
+	Controls(2)=SPRosterPortraitBorder
+	Controls(3)=SPMatchData
+	Controls(4)=SPCharData
+	Controls(5)=SPCharStats
+	Controls(6)=SPRosterCharList
+	Controls(7)=SPCharListBox
 
-         Begin Object Class=GUIGFXButton Name=imgMate4
-             Graphic=Texture'InterfaceContent.Menu.BorderBoxD'
-             Position=ICP_Scaled
-             WinTop=0.052442
-             WinLeft=0.018244
-             WinWidth=0.140000
-             WinHeight=0.896118
-             OnKeyEvent=imgMate4.InternalOnKeyEvent
-         End Object
-         Controls(1)=GUIGFXButton'XInterface.Tab_SPRoster.imgMate4'
+	Controls(8)=pnlMates1
+	Controls(9)=pnlMates2
+	Controls(10)=pnlMates3
+	Controls(11)=pnlMates4
 
-         Begin Object Class=GUILabel Name=lblMate4
-             Caption="Name"
-             TextAlign=TXTA_Center
-             TextColor=(B=255,G=255,R=255)
-             TextFont="UT2SmallFont"
-             WinTop=0.249487
-             WinLeft=0.174012
-             WinWidth=0.797917
-             WinHeight=0.213511
-         End Object
-         Controls(2)=GUILabel'XInterface.Tab_SPRoster.lblMate4'
+	Controls(12)=SPRTeamStats
 
-         Begin Object Class=GUIComboBox Name=cboMate4
-             Hint="Set starting position - change with voice menu during match"
-             WinTop=0.567351
-             WinLeft=0.323564
-             WinWidth=0.554010
-             WinHeight=0.234660
-             OnChange=Tab_SPRoster.PositionChange
-             OnKeyEvent=cboMate4.InternalOnKeyEvent
-         End Object
-         Controls(3)=GUIComboBox'XInterface.Tab_SPRoster.cboMate4'
+	WinTop=0.15
+	WinLeft=0
+	WinWidth=1
+	WinHeight=0.77
+	bAcceptsInput=false		
+	bFillHeight=true		// get it to fill vertical space from tab top
 
-         Begin Object Class=GUIGFXButton Name=btnMate4
-             Graphic=Texture'InterfaceContent.SPMenu.YellowArrowVBand'
-             Position=ICP_Scaled
-             bClientBound=True
-             StyleName="RosterButton"
-             Hint="Assign the selected team member to this roster"
-             WinTop=0.046398
-             WinLeft=0.012050
-             WinWidth=0.058350
-             WinHeight=0.901195
-             Tag=3
-             OnClick=Tab_SPRoster.FixLineup
-             OnKeyEvent=btnMate4.InternalOnKeyEvent
-         End Object
-         Controls(4)=GUIGFXButton'XInterface.Tab_SPRoster.btnMate4'
-
-         Begin Object Class=GUILabel Name=lblNA4
-             Caption="SLOT NOT AVAILABLE"
-             TextAlign=TXTA_Center
-             TextColor=(B=255,G=255,R=255)
-             TextFont="UT2SmallFont"
-             WinTop=0.420000
-             WinHeight=0.210000
-         End Object
-         Controls(5)=GUILabel'XInterface.Tab_SPRoster.lblNA4'
-
-         StyleName="NoBackground"
-         WinTop=0.540000
-         WinLeft=0.590000
-         WinWidth=0.400000
-         WinHeight=0.175000
-     End Object
-     Controls(11)=GUIPanel'XInterface.Tab_SPRoster.pnlMates4'
-
-     Begin Object Class=GUIListBox Name=SPRTeamStats
-         OnCreateComponent=SPRTeamStats.InternalOnCreateComponent
-         WinTop=0.722000
-         WinLeft=0.654063
-         WinWidth=0.338750
-         WinHeight=0.186797
-         bAcceptsInput=False
-         bNeverFocus=True
-     End Object
-     Controls(12)=GUIListBox'XInterface.Tab_SPRoster.SPRTeamStats'
-
-     WinTop=0.150000
-     WinHeight=0.770000
+	MessageNoInfo="No information available."
+	PreStatsMessage=""
+	PostStatsMessage="Stats"
 }

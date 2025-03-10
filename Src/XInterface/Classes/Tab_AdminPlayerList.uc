@@ -57,65 +57,63 @@ function bool BanClicked(GUIComponent Sender)
     return true;
 }
 
+
 defaultproperties
 {
-     Begin Object Class=GUIImage Name=AdminBackground
-         Image=Texture'InterfaceContent.Menu.SquareBoxA'
-         ImageStyle=ISTY_Stretched
-         WinHeight=1.000000
-         bNeverFocus=True
-     End Object
-     Controls(0)=GUIImage'XInterface.Tab_AdminPlayerList.AdminBackground'
+	Begin Object Class=GUIImage name=AdminBackground
+		bAcceptsInput=false
+		bNeverFocus=true
+        Image=Material'InterfaceContent.Menu.SquareBoxA'
+        ImageStyle=ISTY_Stretched
+        WinWidth=1
+        WinLeft=0
+        WinHeight=1
+        WinTop=0
+	End Object
+	Controls(0)=GUIImage'AdminBackground'
 
-     Begin Object Class=GUIMultiColumnListBox Name=AdminPlayersListBox
-         bVisibleWhenEmpty=True
-         Begin Object Class=AdminPlayerList Name=AdminList
-             OnPreDraw=AdminList.InternalOnPreDraw
-             OnClick=AdminList.InternalOnClick
-             OnRightClick=AdminList.InternalOnRightClick
-             OnMousePressed=AdminList.InternalOnMousePressed
-             OnMouseRelease=AdminList.InternalOnMouseRelease
-             OnKeyEvent=AdminList.InternalOnKeyEvent
-             OnBeginDrag=AdminList.InternalOnBeginDrag
-             OnEndDrag=AdminList.InternalOnEndDrag
-             OnDragDrop=AdminList.InternalOnDragDrop
-             OnDragEnter=AdminList.InternalOnDragEnter
-             OnDragLeave=AdminList.InternalOnDragLeave
-             OnDragOver=AdminList.InternalOnDragOver
-         End Object
-         Controls(0)=AdminPlayerList'XInterface.Tab_AdminPlayerList.AdminList'
+	Begin Object Class=AdminPlayerList Name=AdminList
+    End Object
 
-         OnCreateComponent=AdminPlayersListBox.InternalOnCreateComponent
-         StyleName="ServerBrowserGrid"
-         WinHeight=0.878127
-     End Object
-     Controls(1)=GUIMultiColumnListBox'XInterface.Tab_AdminPlayerList.AdminPlayersListBox'
+	Begin Object Class=GUIMultiColumnListBox Name=AdminPlayersListBox
+		WinWidth=1.000000
+		WinHeight=0.878127
+		WinLeft=0.000000
+		WinTop=0.000000
+		bVisibleWhenEmpty=True
+		StyleName="ServerBrowserGrid"
+        Controls(0)=AdminList
+	End Object
+	Controls(1)=GUIMultiColumnListBox'AdminPlayersListBox'
 
-     Begin Object Class=GUIButton Name=AdminPlayerKick
-         Caption="Kick"
-         StyleName="SquareMenuButton"
-         Hint="Kick this Player"
-         WinTop=0.900000
-         WinLeft=0.743750
-         WinWidth=0.120000
-         WinHeight=0.070625
-         OnClick=Tab_AdminPlayerList.KickClicked
-         OnKeyEvent=AdminPlayerKick.InternalOnKeyEvent
-     End Object
-     Controls(2)=GUIButton'XInterface.Tab_AdminPlayerList.AdminPlayerKick'
+	Begin Object Class=GUIButton Name=AdminPlayerKick
+		Caption="Kick"
+		StyleName="SquareMenuButton"
+		Hint="Kick this Player"
+		WinWidth=0.120000
+		WinHeight=0.070625
+		WinLeft=0.743750
+		WinTop=0.900000
+		OnClick=KickClicked
+	End Object
+	Controls(2)=GUIButton'AdminPlayerKick'
 
-     Begin Object Class=GUIButton Name=AdminPlayerBan
-         Caption="Ban"
-         StyleName="SquareMenuButton"
-         Hint="Ban this player"
-         WinTop=0.900000
-         WinLeft=0.868750
-         WinWidth=0.120000
-         WinHeight=0.070625
-         OnClick=Tab_AdminPlayerList.BanClicked
-         OnKeyEvent=AdminPlayerBan.InternalOnKeyEvent
-     End Object
-     Controls(3)=GUIButton'XInterface.Tab_AdminPlayerList.AdminPlayerBan'
+	Begin Object Class=GUIButton Name=AdminPlayerBan
+		Caption="Ban"
+		StyleName="SquareMenuButton"
+		Hint="Ban this player"
+		WinWidth=0.120000
+		WinHeight=0.070625
+		WinLeft=0.868750
+		WinTop=0.900000
+		OnClick=BanClicked
+	End Object
+	Controls(3)=GUIButton'AdminPlayerBan'
 
-     WinHeight=0.625003
+    WinLeft=0
+    WinWidth=1
+    WinTop=0
+	WinHeight=0.625003
+
+
 }

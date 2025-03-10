@@ -152,7 +152,7 @@ defaultproperties
          HilightColor=(A=128)
          HilightOffsetX=1.000000
          HilightOffsetY=1.000000
-         StyleName=
+         StyleName=""
          WinTop=0.781667
          WinLeft=0.020000
          WinWidth=0.960000

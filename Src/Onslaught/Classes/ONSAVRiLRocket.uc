@@ -186,7 +186,7 @@ simulated function Tick(float deltaTime)
 		Acceleration += Normal(Velocity) * (AccelerationAddPerSec * deltaTime);
 }
 
-function TakeDamage(int Damage, Pawn instigatedBy, Vector hitlocation, Vector momentum, class<DamageType> damageType)
+function TakeDamage(int Damage, Pawn instigatedBy, Vector hitlocation, Vector momentum, class<DamageType> damageType, optional int HitIndex)
 {
 	if (Damage > 0)
 		Explode(HitLocation, vect(0,0,0));

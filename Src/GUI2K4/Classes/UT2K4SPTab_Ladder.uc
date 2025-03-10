@@ -387,92 +387,264 @@ function OnChallengeSelect(GUIComponent Sender)
 
 defaultproperties
 {
-     imgChamp(0)=GUIImage'GUI2K4.UT2K4SPTab_Ladder.SPLimgChamp1'
-     imgChamp(1)=GUIImage'GUI2K4.UT2K4SPTab_Ladder.SPLimgChamp2'
-     imgChamp(2)=GUIImage'GUI2K4.UT2K4SPTab_Ladder.SPLimgChamp3'
-     imgChamp(3)=GUIImage'GUI2K4.UT2K4SPTab_Ladder.SPLimgChamp4'
-     imgChampBars(0)=GUIImage'GUI2K4.UT2K4SPTab_Ladder.SPLimgChampBar1'
-     imgChampBars(1)=GUIImage'GUI2K4.UT2K4SPTab_Ladder.SPLimgChampBar2'
-     imgChampBars(2)=GUIImage'GUI2K4.UT2K4SPTab_Ladder.SPLimgChampBar3'
-     imgChampBars(3)=GUIImage'GUI2K4.UT2K4SPTab_Ladder.SPLimgChampBar4'
-     lblLadders(0)=GUILabel'GUI2K4.UT2K4SPTab_Ladder.SPLlblLadder1'
-     lblLadders(1)=GUILabel'GUI2K4.UT2K4SPTab_Ladder.SPLlblLadder2'
-     lblLadders(2)=GUILabel'GUI2K4.UT2K4SPTab_Ladder.SPLlblLadder3'
-     lblLadders(3)=GUILabel'GUI2K4.UT2K4SPTab_Ladder.SPLlblLadder4'
-     Begin Object Class=GUISectionBackground Name=SPLimgLadderBg
-         Caption="No ladder selected"
-         WinTop=0.738729
-         WinLeft=0.015000
-         WinWidth=0.970002
-         WinHeight=0.218750
-         bBoundToParent=True
-         OnPreDraw=SPLimgLadderBg.InternalPreDraw
-     End Object
-     sbgLadderBg=GUISectionBackground'GUI2K4.UT2K4SPTab_Ladder.SPLimgLadderBg'
+	Begin Object class=GUISectionBackground Name=SPLimgLadderBg
+		WinWidth=0.970002
+		WinHeight=0.218750
+		WinLeft=0.015000
+		WinTop=0.738729
+		Caption="No ladder selected"
+		bBoundToParent=true
+    End Object
+    sbgLadderBg=SPLimgLadderBg
 
-     Begin Object Class=AltSectionBackground Name=SPLsbgChallengeBg
-         Caption="Challenges"
-         WinTop=0.259487
-         WinLeft=0.281250
-         WinWidth=0.443750
-         WinHeight=0.140306
-         bBoundToParent=True
-         OnPreDraw=SPLsbgChallengeBg.InternalPreDraw
-     End Object
-     sbgChallengeBg=AltSectionBackground'GUI2K4.UT2K4SPTab_Ladder.SPLsbgChallengeBg'
+	// CTF
+	Begin Object Class=GUIImage Name=SPLimgChamp1
+		Image=Material'InterfaceContent.SPMenu.Lock1'
+		WinWidth=0.062891
+		WinHeight=0.087305
+		WinLeft=0.437695
+		WinTop=0.064322
+		ImageStyle=ISTY_Scaled
+		//ImageAlign=IMGA_Center
+		RenderWeight=0.30
+		bBoundToParent=true
+	End Object
+	imgChamp(0)=SPLimgChamp1
 
-     Begin Object Class=GUIComboBox Name=SPLcbChallenges
-         bReadOnly=True
-         bShowListOnFocus=True
-         Hint="Challenge another team"
-         WinTop=0.315065
-         WinLeft=0.294985
-         WinWidth=0.417347
-         WinHeight=0.048648
-         TabOrder=2
-         bBoundToParent=True
-         OnChange=UT2K4SPTab_Ladder.OnChallengeSelect
-         OnKeyEvent=SPLcbChallenges.InternalOnKeyEvent
-     End Object
-     cbChallenges=GUIComboBox'GUI2K4.UT2K4SPTab_Ladder.SPLcbChallenges'
+	// BR
+	Begin Object Class=GUIImage Name=SPLimgChamp2
+		Image=Material'InterfaceContent.SPMenu.Lock2'
+		WinWidth=0.062891
+		WinHeight=0.087305
+		WinLeft=0.437695
+		WinTop=0.150260
+		ImageStyle=ISTY_Scaled
+		//ImageAlign=IMGA_Center
+		RenderWeight=0.30
+		bBoundToParent=true
+	End Object
+	imgChamp(1)=SPLimgChamp2
 
-     Begin Object Class=UT2K4LadderButton Name=SPLbtnChampFinal
-         WinTop=0.094322
-         WinLeft=0.458633
-         TabOrder=1
-         bBoundToParent=True
-         bAcceptsInput=False
-         OnClick=UT2K4SPTab_Ladder.OnChampClick
-         OnDblClick=UT2K4SPTab_Ladder.onMatchDblClick
-         OnKeyEvent=SPLbtnChampFinal.InternalOnKeyEvent
-     End Object
-     btnChampFinal=UT2K4LadderButton'GUI2K4.UT2K4SPTab_Ladder.SPLbtnChampFinal'
+	// DOM
+	Begin Object Class=GUIImage Name=SPLimgChamp3
+		Image=Material'InterfaceContent.SPMenu.Lock3'
+		WinWidth=0.062891
+		WinHeight=0.087305
+		WinLeft=0.500195
+		WinTop=0.064322
+		ImageStyle=ISTY_Scaled
+		//ImageAlign=IMGA_Center
+		RenderWeight=0.30
+		bBoundToParent=true
+	End Object
+	imgChamp(2)=SPLimgChamp3
 
-     Begin Object Class=GUIImage Name=SPLimgChampFinal
-         Image=Combiner'InterfaceContent.SPMenu.Combiner0'
-         ImageStyle=ISTY_Scaled
-         WinTop=0.064895
-         WinLeft=0.437930
-         WinWidth=0.125722
-         WinHeight=0.172673
-         RenderWeight=0.310000
-         bBoundToParent=True
-         bVisible=False
-     End Object
-     imgChampFinal=GUIImage'GUI2K4.UT2K4SPTab_Ladder.SPLimgChampFinal'
+	// AS
+	Begin Object Class=GUIImage Name=SPLimgChamp4
+		Image=Material'InterfaceContent.SPMenu.Lock4'
+		WinWidth=0.062891
+		WinHeight=0.087305
+		WinLeft=0.500195
+		WinTop=0.150260
+		ImageStyle=ISTY_Scaled
+		//ImageAlign=IMGA_Center
+		RenderWeight=0.30
+		bBoundToParent=true
+	End Object
+	imgChamp(3)=SPLimgChamp4
 
-     PreviousLadder=-1
-     LadderBorderNormal=Texture'2K4Menus.Controls.thinpipe_b'
-     LadderBorderCompleted=Texture'2K4Menus.Controls.thinpipe_f'
-     LadderBarCompleted=Texture'InterfaceContent.SPMenu.BarHorizontalHi'
-     LadderImageCompleted(0)="LadderShots.CTFMoneyShot"
-     LadderImageCompleted(1)="LadderShots.BRMoneyShot"
-     LadderImageCompleted(2)="LadderShots.DOMMoneyShot"
-     LadderImageCompleted(3)="LadderShots.TeamDMMoneyShot"
-     LadderImage(0)="LadderShots.CTFShot"
-     LadderImage(1)="LadderShots.BRShot"
-     LadderImage(2)="LadderShots.DOMShot"
-     LadderImage(3)="LadderShots.TeamDMShot"
-     msgSelectChal="Select a challenge"
-     PanelCaption="Ladder"
+	// Ladder routes
+
+	// CTF
+	Begin Object Class=GUIImage Name=SPLimgChampBar1
+		Image=Material'InterfaceContent.SPMenu.BarHorizontal'
+		WinWidth=0.313086
+		WinHeight=0.003906
+		WinLeft=0.124218
+		WinTop=0.105729
+		ImageStyle=ISTY_Scaled
+		bBoundToParent=true
+	End Object
+	imgChampBars(0)=SPLimgChampBar1
+
+	// BR
+	Begin Object Class=GUIImage Name=SPLimgChampBar2
+		Image=Material'InterfaceContent.SPMenu.BarHorizontal'
+		WinWidth=0.197539
+		WinHeight=0.003906
+		WinLeft=0.241016
+		WinTop=0.194218
+		ImageStyle=ISTY_Scaled
+		bBoundToParent=true
+	End Object
+	imgChampBars(1)=SPLimgChampBar2
+
+	// DOM
+	Begin Object Class=GUIImage Name=SPLimgChampBar3
+		Image=Material'InterfaceContent.SPMenu.BarHorizontal'
+		WinWidth=0.313086
+		WinHeight=0.003906
+		WinLeft=0.563085
+		WinTop=0.105729
+		ImageStyle=ISTY_Scaled
+		bBoundToParent=true
+	End Object
+	imgChampBars(2)=SPLimgChampBar3
+
+	// AS
+	Begin Object Class=GUIImage Name=SPLimgChampBar4
+		Image=Material'InterfaceContent.SPMenu.BarHorizontal'
+		WinWidth=0.195586
+		WinHeight=0.003906
+		WinLeft=0.563085
+		WinTop=0.194270
+		ImageStyle=ISTY_Scaled
+		bBoundToParent=true
+	End Object
+	imgChampBars(3)=SPLimgChampBar4
+
+	// Ladder Labels
+
+	// CTF
+	Begin Object Class=GUILabel Name=SPLlblLadder1
+		TextColor=(R=14,G=41,B=106,A=255)
+		bTransparent=true
+		TextAlign=TXTA_Center
+		WinWidth=0.347500
+		WinHeight=0.043125
+		WinLeft=0.118437
+		WinTop=0.060833
+		StyleName="NoBackground"
+		ShadowColor=(R=0,G=0,B=0,A=128)
+		ShadowOffsetX=1
+		ShadowOffsetY=1
+		bBoundToParent=true
+	End Object
+	lblLadders(0)=SPLlblLadder1
+
+	// BR
+	Begin Object Class=GUILabel Name=SPLlblLadder2
+		TextColor=(R=14,G=41,B=106,A=255)
+		bTransparent=true
+		TextAlign=TXTA_Center
+		WinWidth=0.223122
+		WinHeight=0.043125
+		WinLeft=0.242813
+		WinTop=0.149167
+		StyleName="NoBackground"
+		ShadowColor=(R=0,G=0,B=0,A=128)
+		ShadowOffsetX=1
+		ShadowOffsetY=1
+		bBoundToParent=true
+	End Object
+	lblLadders(1)=SPLlblLadder2
+
+	// DOM
+	Begin Object Class=GUILabel Name=SPLlblLadder3
+		TextColor=(R=14,G=41,B=106,A=255)
+		bTransparent=true
+		TextAlign=TXTA_Center
+		WinWidth=0.346250
+		WinHeight=0.043125
+		WinLeft=0.544064
+		WinTop=0.060833
+		StyleName="NoBackground"
+		ShadowColor=(R=0,G=0,B=0,A=128)
+		ShadowOffsetX=1
+		ShadowOffsetY=1
+		bBoundToParent=true
+	End Object
+	lblLadders(2)=SPLlblLadder3
+
+	// AS
+	Begin Object Class=GUILabel Name=SPLlblLadder4
+		TextColor=(R=14,G=41,B=106,A=255)
+		bTransparent=true
+		TextAlign=TXTA_Center
+		WinWidth=0.221874
+		WinHeight=0.043125
+		WinLeft=0.537818
+		WinTop=0.149166
+		StyleName="NoBackground"
+		ShadowColor=(R=0,G=0,B=0,A=128)
+		ShadowOffsetX=1
+		ShadowOffsetY=1
+		bBoundToParent=true
+	End Object
+	lblLadders(3)=SPLlblLadder4
+
+	// Cham button
+
+	// championship image
+	Begin Object Class=UT2K4LadderButton Name=SPLbtnChampFinal
+		Graphic=Material'InterfaceContent.SPMenu.Lock1'
+		WinLeft=0.458633
+		WinTop=0.094322
+		bAcceptsInput=false
+		OnClick=OnChampClick
+		//OnClick=onMatchClick
+		OnDblClick=onMatchDblClick
+		TabOrder=1
+		bBoundToParent=true
+	End Object
+	btnChampFinal=SPLbtnChampFinal
+
+	// championship border
+	Begin Object Class=GUIImage Name=SPLimgChampFinal
+		Image=Material'InterfaceContent.SPMenu.Combiner0'
+		WinWidth=0.125722
+		WinHeight=0.172673
+		WinLeft=0.437930
+		WinTop=0.064895
+		bVisible=false
+		bAcceptsInput=false
+		ImageStyle=ISTY_Scaled
+		RenderWeight=0.31
+		bBoundToParent=true
+	End Object
+	imgChampFinal=SPLimgChampFinal
+
+	// challenge things
+	Begin Object class=AltSectionBackground Name=SPLsbgChallengeBg
+		WinWidth=0.443750
+		WinHeight=0.140306
+		WinLeft=0.281250
+		WinTop=0.259487
+		Caption="Challenges"
+		bBoundToParent=true
+    End Object
+    sbgChallengeBg=SPLsbgChallengeBg
+
+	Begin Object class=GUIComboBox name=SPLcbChallenges
+		Hint="Challenge another team"
+		WinWidth=0.417347
+		WinHeight=0.048648
+		WinLeft=0.294985
+		WinTop=0.315065
+		TabOrder=2
+		RenderWeight=0.5
+		bReadOnly=true
+		bShowListOnFocus=true
+		OnChange=OnChallengeSelect
+		bBoundToParent=true
+	End Object
+	cbChallenges=SPLcbChallenges
+
+	PanelCaption="Ladder"
+	PreviousLadder=-1
+	msgSelectChal="Select a challenge"
+
+	LadderBorderNormal=Material'2K4Menus.Controls.thinpipe_b'
+	LadderBorderCompleted=Material'2K4Menus.Controls.thinpipe_f'
+	LadderBarCompleted=Material'InterfaceContent.SPMenu.BarHorizontalHi'
+
+	LadderImage(0)="LadderShots.CTFShot"
+	LadderImageCompleted(0)="LadderShots.CTFMoneyShot"
+	LadderImage(1)="LadderShots.BRShot"
+	LadderImageCompleted(1)="LadderShots.BRMoneyShot"
+	LadderImage(2)="LadderShots.DOMShot"
+	LadderImageCompleted(2)="LadderShots.DOMMoneyShot"
+	// TODO: assault screenshot
+	LadderImage(3)="LadderShots.TeamDMShot"
+	LadderImageCompleted(3)="LadderShots.TeamDMMoneyShot"
 }

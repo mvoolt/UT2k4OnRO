@@ -19,11 +19,16 @@ simulated function PostBeginPlay()
 
 defaultproperties
 {
-     bStatic=False
-     bNoDelete=True
-     Mesh=SkeletalMesh'XEffects.SharkMesh'
-     Skins(0)=FinalBlend'XEffects.Shark.SharkFB'
-     bShouldBaseAtStartup=False
-     CollisionRadius=0.000000
-     CollisionHeight=0.000000
+    DrawType=DT_Mesh
+    Mesh=Mesh'SharkMesh'
+    CollisionRadius=0.0
+    CollisionHeight=0.0
+    bStatic=false
+    bNoDelete=true
+    bShouldBaseAtStartup=false
+    Begin Object Class=FinalBlend Name=SharkFB
+        FrameBufferBlending=FB_AlphaBlend
+        AlphaRef=80
+    End Object
+    Skins(0)=FinalBlend'SharkFB'
 }

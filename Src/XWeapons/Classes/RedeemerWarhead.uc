@@ -208,7 +208,7 @@ simulated singular function Bump(Actor Other)
 }
 
 function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation,
-							Vector momentum, class<DamageType> damageType)
+							Vector momentum, class<DamageType> damageType, optional int HitIndex)
 {
 	if ( (Damage > 0) && ((InstigatedBy == None) || (InstigatedBy.Controller == None) || (Instigator == None) || (Instigator.Controller == None) || !InstigatedBy.Controller.SameTeamAs(Instigator.Controller)) )
 	{
@@ -402,7 +402,7 @@ ignores Trigger, Bump, HitWall, HeadVolumeChange, PhysicsVolumeChange, Falling, 
 	function ServerBlowUp() {}
 	function Timer() {}
 	function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation,
-							Vector momentum, class<DamageType> damageType) {}
+							Vector momentum, class<DamageType> damageType, optional int HitIndex) {}
 
     function BeginState()
     {

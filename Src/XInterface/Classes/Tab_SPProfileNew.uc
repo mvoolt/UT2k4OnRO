@@ -267,290 +267,286 @@ function bool DefaultsClick(GUIComponent Sender)
 
 defaultproperties
 {
-     DefaultName="Player"
-     DefaultTeamName="Team"
-     DefaultCharacter="Gorge"
-     TeamSymbolPrefix="TeamSymbols_UT2003.sym"
-     DefaultTeamSymbol=1
-     Err_ProfileExists="Profile with name %prof% already exists!"
-     Err_CantCreateProfile="Profile creation failed."
-     Begin Object Class=GUIButton Name=btnSaveProfile
-         Caption="CREATE PROFILE"
-         Hint="Create a profile with these settings"
-         WinTop=0.925000
-         WinLeft=0.744060
-         WinWidth=0.223438
-         WinHeight=0.075000
-         OnClick=Tab_SPProfileNew.CreateClick
-         OnKeyEvent=btnSaveProfile.InternalOnKeyEvent
-     End Object
-     Controls(0)=GUIButton'XInterface.Tab_SPProfileNew.btnSaveProfile'
+	Begin Object Class=GUIImage Name=imgEditsBack
+		Image=Material'InterfaceContent.Menu.EditBox'
+		WinWidth=0.444304
+		WinHeight=0.77
+		WinLeft=0.504375
+		WinTop=0.073
+		ImageStyle=ISTY_Stretched
+		bNeverFocus=true
+		bAcceptsInput=false
+	End Object
 
-     Begin Object Class=GUIImage Name=imgEditsBack
-         Image=Texture'InterfaceContent.Menu.EditBox'
-         ImageStyle=ISTY_Stretched
-         WinTop=0.073000
-         WinLeft=0.504375
-         WinWidth=0.444304
-         WinHeight=0.770000
-         bNeverFocus=True
-     End Object
-     Controls(1)=GUIImage'XInterface.Tab_SPProfileNew.imgEditsBack'
+	// EditBox with Limited CharSet for Player Name
+	Begin Object class=GUIEditBox Name=ebNameEdit
+		TextStr="PlayerName"
+		AllowedCharSet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+	End Object
 
-     Begin Object Class=moEditBox Name=moebPlayerName
-         bVerticalLayout=True
-         Caption="Player Name: "
-         LabelFont="UT2SmallFont"
-         LabelColor=(B=255,G=255,R=255)
-         Begin Object Class=GUIEditBox Name=ebNameEdit
-             TextStr="PlayerName"
-             AllowedCharSet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-             OnActivate=ebNameEdit.InternalActivate
-             OnDeActivate=ebNameEdit.InternalDeactivate
-             OnKeyType=ebNameEdit.InternalOnKeyType
-             OnKeyEvent=ebNameEdit.InternalOnKeyEvent
-         End Object
-         MyComponent=GUIEditBox'XInterface.Tab_SPProfileNew.ebNameEdit'
+	Begin Object class=moEditBox Name=moebPlayerName
+		Caption="Player Name: "
+		Hint="Your character's name"
+		LabelJustification=TXTA_Left
+		LabelFont="UT2SmallFont"
+		LabelColor=(R=255,G=255,B=255,A=255)
+		WinWidth=0.345
+		WinHeight=0.122500
+		WinLeft=0.553125
+		WinTop=0.286087
+		MyComponent=ebNameEdit
+		bVerticalLayout=true
+	End Object
 
-         OnCreateComponent=moebPlayerName.InternalOnCreateComponent
-         Hint="Your character's name"
-         WinTop=0.286087
-         WinLeft=0.553125
-         WinWidth=0.345000
-         WinHeight=0.122500
-     End Object
-     Controls(2)=moEditBox'XInterface.Tab_SPProfileNew.moebPlayerName'
+	// EditBox with Limited CharSet for Team Name
+	Begin Object class=GUIEditBox Name=ebTeamEdit
+		TextStr="TeamName"
+		AllowedCharSet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+	End Object
 
-     Begin Object Class=moEditBox Name=moebTeamName
-         bVerticalLayout=True
-         Caption="Team Name: "
-         LabelFont="UT2SmallFont"
-         LabelColor=(B=255,G=255,R=255)
-         Begin Object Class=GUIEditBox Name=ebTeamEdit
-             TextStr="TeamName"
-             AllowedCharSet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-             OnActivate=ebTeamEdit.InternalActivate
-             OnDeActivate=ebTeamEdit.InternalDeactivate
-             OnKeyType=ebTeamEdit.InternalOnKeyType
-             OnKeyEvent=ebTeamEdit.InternalOnKeyEvent
-         End Object
-         MyComponent=GUIEditBox'XInterface.Tab_SPProfileNew.ebTeamEdit'
+	Begin Object class=moEditBox Name=moebTeamName
+		Caption="Team Name: "
+		Hint="The name of your team"
+		LabelJustification=TXTA_Left
+		LabelFont="UT2SmallFont"
+		LabelColor=(R=255,G=255,B=255,A=255)
+		WinWidth=0.345
+		WinHeight=0.122500
+		WinLeft=0.553125
+		WinTop=0.428007
+		MyComponent=ebTeamEdit
+		bVerticalLayout=true
+	End Object
 
-         OnCreateComponent=moebTeamName.InternalOnCreateComponent
-         Hint="The name of your team"
-         WinTop=0.428007
-         WinLeft=0.553125
-         WinWidth=0.345000
-         WinHeight=0.122500
-     End Object
-     Controls(3)=moEditBox'XInterface.Tab_SPProfileNew.moebTeamName'
+	// ComboBox for use by
+	Begin Object class=GUIComboBox Name=cbDifficulty
+		bReadOnly=true
+	End Object
 
-     Begin Object Class=moComboBox Name=mocbDifficulty
-         bVerticalLayout=True
-         Caption="Difficulty: "
-         LabelFont="UT2SmallFont"
-         LabelColor=(B=255,G=255,R=255)
-         Begin Object Class=GUIComboBox Name=cbDifficulty
-             bReadOnly=True
-             OnKeyEvent=cbDifficulty.InternalOnKeyEvent
-         End Object
-         MyComponent=GUIComboBox'XInterface.Tab_SPProfileNew.cbDifficulty'
+	Begin Object class=moComboBox Name=mocbDifficulty
+		Caption="Difficulty: "
+		Hint="Customize your challenge"
+		LabelJustification=TXTA_Left
+		LabelFont="UT2SmallFont"
+		LabelColor=(R=255,G=255,B=255,A=255)
+		WinWidth=0.345
+		WinHeight=0.122500
+		WinLeft=0.553125
+		WinTop=0.568803
+		MyComponent=cbDifficulty
+		bVerticalLayout=true
+	End Object
 
-         OnCreateComponent=mocbDifficulty.InternalOnCreateComponent
-         Hint="Customize your challenge"
-         WinTop=0.568803
-         WinLeft=0.553125
-         WinWidth=0.345000
-         WinHeight=0.122500
-     End Object
-     Controls(4)=moComboBox'XInterface.Tab_SPProfileNew.mocbDifficulty'
+	// portrait of the selected character
+	Begin Object class=GUICharacterListTeam Name=clistPlayerSkins
+		Hint="Your character's appearance, use arrow keys to change"
+		WinWidth=0.124694
+		WinHeight=0.500000
+		WinLeft=0.083462
+		WinTop=0.117917
+		bCenterInBounds=true
+		FixedItemsPerPage=1
+		StyleName="CharButton"
+	End Object
 
-     Begin Object Class=GUIImage Name=imgSkinsBack
-         Image=Texture'InterfaceContent.Menu.EditBox'
-         ImageStyle=ISTY_Stretched
-         WinTop=0.073000
-         WinLeft=0.055938
-         WinWidth=0.215000
-         WinHeight=0.770000
-         bNeverFocus=True
-     End Object
-     Controls(5)=GUIImage'XInterface.Tab_SPProfileNew.imgSkinsBack'
+	// team symbol
+	Begin Object class=GUIImageList Name=ilTeamSymbols
+		Hint="Your team's symbol; use arrow keys to change"
+		WinWidth=0.167212
+		WinHeight=0.500000
+		WinLeft=0.303972
+		WinTop=0.137175
+		bAcceptsInput=true
+		bNeverFocus=false
+		ImageColor=(R=255,G=255,B=255,A=255);
+		ImageRenderStyle=MSTY_Normal
+		ImageStyle=ISTY_Justified
+		ImageAlign=IMGA_Center
+		bWrap=true
+	End Object
 
-     Begin Object Class=GUICharacterListTeam Name=clistPlayerSkins
-         FixedItemsPerPage=1
-         StyleName="CharButton"
-         Hint="Your character's appearance, use arrow keys to change"
-         WinTop=0.117917
-         WinLeft=0.083462
-         WinWidth=0.124694
-         WinHeight=0.500000
-         OnClick=clistPlayerSkins.InternalOnClick
-         OnRightClick=clistPlayerSkins.InternalOnRightClick
-         OnMousePressed=clistPlayerSkins.InternalOnMousePressed
-         OnMouseRelease=clistPlayerSkins.InternalOnMouseRelease
-         OnKeyEvent=clistPlayerSkins.InternalOnKeyEvent
-         OnBeginDrag=clistPlayerSkins.InternalOnBeginDrag
-         OnEndDrag=clistPlayerSkins.InternalOnEndDrag
-         OnDragDrop=clistPlayerSkins.InternalOnDragDrop
-         OnDragEnter=clistPlayerSkins.InternalOnDragEnter
-         OnDragLeave=clistPlayerSkins.InternalOnDragLeave
-         OnDragOver=clistPlayerSkins.InternalOnDragOver
-     End Object
-     Controls(6)=GUICharacterListTeam'XInterface.Tab_SPProfileNew.clistPlayerSkins'
+	// The Back Button
+	Begin Object Class=GUIButton Name=btnBack
+		Caption="BACK"
+		Hint="Return to previous menu"
+		OnClick=BackClick
+		WinWidth=0.200000
+		WinHeight=0.075000
+		WinLeft=0.028125
+		WinTop=0.925
+	End Object
 
-     Begin Object Class=GUIGFXButton Name=btnPrevSkin
-         Graphic=FinalBlend'InterfaceContent.Menu.fbArrowLeft'
-         Position=ICP_Scaled
-         Hint="Selects a new appearance for your character"
-         WinTop=0.640000
-         WinLeft=0.080000
-         WinWidth=0.080000
-         WinHeight=0.080000
-         bNeverFocus=True
-         OnClick=Tab_SPProfileNew.PrevSkin
-         OnKeyEvent=btnPrevSkin.InternalOnKeyEvent
-     End Object
-     Controls(7)=GUIGFXButton'XInterface.Tab_SPProfileNew.btnPrevSkin'
+	// The Defaults Button (Reset ?)
+	Begin Object Class=GUIButton Name=btnDefaults
+		Caption="SET TO DEFAULTS"
+		Hint="Set this profile back to default values"
+		OnClick=DefaultsClick
+		WinWidth=0.232813
+		WinHeight=0.075000
+		WinLeft=0.367500
+		WinTop=0.925
+	End Object
 
-     Begin Object Class=GUIGFXButton Name=btnNextSkin
-         Graphic=FinalBlend'InterfaceContent.Menu.fbArrowRight'
-         Position=ICP_Scaled
-         Hint="Selects a new appearance for your character"
-         WinTop=0.640000
-         WinLeft=0.172187
-         WinWidth=0.080000
-         WinHeight=0.080000
-         bNeverFocus=True
-         OnClick=Tab_SPProfileNew.NextSkin
-         OnKeyEvent=btnNextSkin.InternalOnKeyEvent
-     End Object
-     Controls(8)=GUIGFXButton'XInterface.Tab_SPProfileNew.btnNextSkin'
+	Begin Object Class=GUIButton Name=btnSaveProfile
+		Caption="CREATE PROFILE"
+		Hint="Create a profile with these settings"
+		OnClick=CreateClick
+		WinWidth=0.223438
+		WinHeight=0.075000
+		WinLeft=0.744060
+		WinTop=0.925
+	End Object
 
-     Begin Object Class=GUIImage Name=imgSymbolsBack
-         Image=Texture'InterfaceContent.Menu.EditBox'
-         ImageStyle=ISTY_Stretched
-         WinTop=0.073000
-         WinLeft=0.280243
-         WinWidth=0.215000
-         WinHeight=0.770000
-         bNeverFocus=True
-     End Object
-     Controls(9)=GUIImage'XInterface.Tab_SPProfileNew.imgSymbolsBack'
+	Begin Object Class=GUIImage Name=imgSkinsBack
+		Image=Material'InterfaceContent.Menu.EditBox'
+		WinWidth=0.215
+		WinHeight=0.77
+		WinLeft=0.055938
+		WinTop=0.073
+		ImageStyle=ISTY_Stretched
+		bNeverFocus=true
+		bAcceptsInput=false
+	End Object
 
-     Begin Object Class=GUIImageList Name=ilTeamSymbols
-         bWrap=True
-         ImageStyle=ISTY_Justified
-         ImageRenderStyle=MSTY_Normal
-         ImageAlign=IMGA_Center
-         Hint="Your team's symbol; use arrow keys to change"
-         WinTop=0.137175
-         WinLeft=0.303972
-         WinWidth=0.167212
-         WinHeight=0.500000
-     End Object
-     Controls(10)=GUIImageList'XInterface.Tab_SPProfileNew.ilTeamSymbols'
+	Begin Object Class=GUIGfxButton Name=btnPrevSkin
+		Hint="Selects a new appearance for your character"
+		Graphic=Material'InterfaceContent.Menu.fbArrowLeft'
+		OnClick=PrevSkin
+		WinWidth=0.080000
+		WinHeight=0.080000
+		WinLeft=0.080000
+		WinTop=0.640000
+		bNeverFocus=true
+	    Position=ICP_Scaled
+	End Object
 
-     Begin Object Class=GUIGFXButton Name=btnPrevSymbol
-         Graphic=FinalBlend'InterfaceContent.Menu.fbArrowLeft'
-         Position=ICP_Scaled
-         Hint="Selects a new symbol for your team"
-         WinTop=0.640000
-         WinLeft=0.298750
-         WinWidth=0.080000
-         WinHeight=0.080000
-         bNeverFocus=True
-         OnClick=Tab_SPProfileNew.PrevSymbol
-         OnKeyEvent=btnPrevSymbol.InternalOnKeyEvent
-     End Object
-     Controls(11)=GUIGFXButton'XInterface.Tab_SPProfileNew.btnPrevSymbol'
+	Begin Object Class=GUIGfxButton Name=btnNextSkin
+		Hint="Selects a new appearance for your character"
+		Graphic=Material'InterfaceContent.Menu.fbArrowRight'
+		OnClick=NextSkin
+		WinWidth=0.080000
+		WinHeight=0.080000
+		WinLeft=0.172187
+		WinTop=0.640000
+	    Position=ICP_Scaled
+		bNeverFocus=true
+	End Object
 
-     Begin Object Class=GUIGFXButton Name=btnNextSymbol
-         Graphic=FinalBlend'InterfaceContent.Menu.fbArrowRight'
-         Position=ICP_Scaled
-         Hint="Selects a new symbol for your team"
-         WinTop=0.640000
-         WinLeft=0.389375
-         WinWidth=0.080000
-         WinHeight=0.080000
-         bNeverFocus=True
-         OnClick=Tab_SPProfileNew.NextSymbol
-         OnKeyEvent=btnNextSymbol.InternalOnKeyEvent
-     End Object
-     Controls(12)=GUIGFXButton'XInterface.Tab_SPProfileNew.btnNextSymbol'
+	Begin Object Class=GUIImage Name=imgSymbolsBack
+		Image=Material'InterfaceContent.Menu.EditBox'
+		WinWidth=0.215000
+		WinHeight=0.770000
+		WinLeft=0.280243
+		WinTop=0.073000
+		ImageStyle=ISTY_Stretched
+		bNeverFocus=true
+	End Object
 
-     Begin Object Class=GUIButton Name=btnBack
-         Caption="BACK"
-         Hint="Return to previous menu"
-         WinTop=0.925000
-         WinLeft=0.028125
-         WinWidth=0.200000
-         WinHeight=0.075000
-         OnClick=Tab_SPProfileNew.BackClick
-         OnKeyEvent=btnBack.InternalOnKeyEvent
-     End Object
-     Controls(13)=GUIButton'XInterface.Tab_SPProfileNew.btnBack'
+	Begin Object Class=GUIGfxButton Name=btnPrevSymbol
+		Hint="Selects a new symbol for your team"
+		Graphic=Material'InterfaceContent.Menu.fbArrowLeft'
+		OnClick=PrevSymbol
+		WinWidth=0.080000
+		WinHeight=0.080000
+		WinLeft=0.298750
+		WinTop=0.640000
+		bNeverFocus=true
+	    Position=ICP_Scaled
+	End Object
 
-     Begin Object Class=GUIButton Name=btnDefaults
-         Caption="SET TO DEFAULTS"
-         Hint="Set this profile back to default values"
-         WinTop=0.925000
-         WinLeft=0.367500
-         WinWidth=0.232813
-         WinHeight=0.075000
-         OnClick=Tab_SPProfileNew.DefaultsClick
-         OnKeyEvent=btnDefaults.InternalOnKeyEvent
-     End Object
-     Controls(14)=GUIButton'XInterface.Tab_SPProfileNew.btnDefaults'
+	Begin Object Class=GUIGfxButton Name=btnNextSymbol
+		Hint="Selects a new symbol for your team"
+		Graphic=Material'InterfaceContent.Menu.fbArrowRight'
+		OnClick=NextSymbol
+		WinWidth=0.080000
+		WinHeight=0.080000
+		WinLeft=0.389375
+		WinTop=0.640000
+		bNeverFocus=true
+	    Position=ICP_Scaled
+	End Object
 
-     Begin Object Class=GUILabel Name=lblCharacter
-         Caption="Select|Character"
-         TextAlign=TXTA_Center
-         TextColor=(B=255,G=255,R=255)
-         TextFont="UT2SmallFont"
-         bMultiLine=True
-         WinTop=0.724583
-         WinLeft=0.064062
-         WinWidth=0.200000
-         WinHeight=0.100000
-     End Object
-     Controls(15)=GUILabel'XInterface.Tab_SPProfileNew.lblCharacter'
+	Begin Object class=GUILabel Name=lblTeamSymbol
+		Caption="Select|Team Symbol"
+		TextALign=TXTA_Center
+		TextFont="UT2SmallFont"
+		TextColor=(R=255,G=255,B=255,A=255)
+		WinWidth=0.200000
+		WinHeight=0.100000
+		WinLeft=0.284375
+		WinTop=0.724583
+		bMultiLine=true
+	End Object
 
-     Begin Object Class=GUILabel Name=lblTeamSymbol
-         Caption="Select|Team Symbol"
-         TextAlign=TXTA_Center
-         TextColor=(B=255,G=255,R=255)
-         TextFont="UT2SmallFont"
-         bMultiLine=True
-         WinTop=0.724583
-         WinLeft=0.284375
-         WinWidth=0.200000
-         WinHeight=0.100000
-     End Object
-     Controls(16)=GUILabel'XInterface.Tab_SPProfileNew.lblTeamSymbol'
+	Begin Object class=GUILabel Name=lblCharacter
+		Caption="Select|Character"
+		TextALign=TXTA_Center
+		TextFont="UT2SmallFont"
+		TextColor=(R=255,G=255,B=255,A=255)
+		WinWidth=0.200000
+		WinHeight=0.100000
+		WinLeft=0.064062
+		WinTop=0.724583
+		bMultiLine=true
+	End Object
 
-     Begin Object Class=GUIImage Name=symbolBackground
-         Image=Texture'InterfaceContent.Menu.BorderBoxA1'
-         ImageStyle=ISTY_Stretched
-         ImageRenderStyle=MSTY_Normal
-         WinTop=0.237865
-         WinLeft=0.296196
-         WinWidth=0.179101
-         WinHeight=0.297265
-     End Object
-     Controls(17)=GUIImage'XInterface.Tab_SPProfileNew.symbolBackground'
+	// cool border for the player portrait symbol
+	Begin Object class=GUIImage Name=portraitBackground
+		Image=Material'InterfaceContent.Menu.BorderBoxA1'
+		WinWidth=0.146680
+		WinHeight=0.506094
+		WinLeft=0.094141
+		WinTop=0.110469
+		ImageColor=(R=255,G=255,B=255,A=255);
+		ImageRenderStyle=MSTY_Normal
+		ImageStyle=ISTY_Stretched
+		bVisible=false
+	End Object
 
-     Begin Object Class=GUIImage Name=portraitBackground
-         Image=Texture'InterfaceContent.Menu.BorderBoxA1'
-         ImageStyle=ISTY_Stretched
-         ImageRenderStyle=MSTY_Normal
-         WinTop=0.110469
-         WinLeft=0.094141
-         WinWidth=0.146680
-         WinHeight=0.506094
-         bVisible=False
-     End Object
-     Controls(18)=GUIImage'XInterface.Tab_SPProfileNew.portraitBackground'
+	// cool border for the team symbol
+	Begin Object class=GUIImage Name=symbolBackground
+		WinWidth=0.179101
+		WinHeight=0.297265
+		WinLeft=0.296196
+		WinTop=0.237865
+		Image=Material'InterfaceContent.Menu.BorderBoxA1'
+		ImageColor=(R=255,G=255,B=255,A=255);
+		ImageRenderStyle=MSTY_Normal
+		ImageStyle=ISTY_Stretched
+	End Object
 
-     WinTop=0.150000
-     WinHeight=0.770000
+	Controls(0)=btnSaveProfile
+	Controls(1)=imgEditsBack
+	Controls(2)=moebPlayerName
+	Controls(3)=moebTeamName
+	Controls(4)=mocbDifficulty
+	Controls(5)=imgSkinsBack
+	Controls(6)=clistPlayerSkins
+	Controls(7)=btnPrevSkin
+	Controls(8)=btnNextSkin
+	Controls(9)=imgSymbolsBack
+	Controls(10)=ilTeamSymbols
+	Controls(11)=btnPrevSymbol
+	Controls(12)=btnNextSymbol
+	Controls(13)=btnBack
+	Controls(14)=btnDefaults
+	Controls(15)=lblCharacter
+	Controls(16)=lblTeamSymbol
+	Controls(17)=symbolBackground
+	Controls(18)=portraitBackground
+
+	DefaultName="Player"
+	DefaultTeamName="Team"
+	DefaultTeamSymbol=1
+	TeamSymbolPrefix="TeamSymbols_UT2003.sym"
+	DefaultCharacter="Gorge"
+
+	WinTop=0.15
+	WinLeft=0
+	WinWidth=1
+	WinHeight=0.77
+	bAcceptsInput=false
+
+	Err_ProfileExists="Profile with name %prof% already exists!"
+	Err_CantCreateProfile="Profile creation failed."
 }

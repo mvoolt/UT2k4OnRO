@@ -232,7 +232,7 @@ function Landed(vector hitNormal)
 		SetPhysics(PHYS_Rotating);
 }
 
-function TakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType)
+function TakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType, optional int HitIndex)
 {
     if (Momentum != Vect(0,0,0) && !bHome && (Holder == None) )
     {

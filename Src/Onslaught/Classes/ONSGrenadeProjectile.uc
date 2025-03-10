@@ -134,7 +134,7 @@ simulated function Explode(vector HitLocation, vector HitNormal)
     Destroy();
 }
 
-simulated function TakeDamage(int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType)
+simulated function TakeDamage(int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType, optional int HitIndex)
 {
 	local Actor A;
 

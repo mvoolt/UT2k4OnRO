@@ -192,7 +192,7 @@ function bool RecommendLongRangedAttack()
 	return true;
 }
 
-function TakeDamage(int Damage, Pawn instigatedBy, Vector Hitlocation, Vector Momentum, class<DamageType> DamageType)
+function TakeDamage(int Damage, Pawn instigatedBy, Vector Hitlocation, Vector Momentum, class<DamageType> DamageType, optional int HitIndex)
 {
 	if (DamageType == class'DamTypeHoverBikePlasma')
 		Damage *= 0.80;

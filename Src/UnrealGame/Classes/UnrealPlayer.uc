@@ -51,7 +51,7 @@ replication
 function ServerUpdateStats(TeamPlayerReplicationInfo PRI)
 {
 // if _RO_
-	ClientSendStats(PRI,PRI.GoalsScored,PRI.bFirstBlood, PRI.kills,PRI.suicides,PRI.FlagTouches,PRI.FlagReturns,PRI.FlakCount,PRI.ComboCount,PRI.HeadCount,PRI.RanOverCount/*,PRI.DaredevilPoints*/);
+	ClientSendStats(PRI,PRI.GoalsScored,PRI.bFirstBlood, PRI.kills,PRI.suicides,PRI.FlagTouches,PRI.FlagReturns,PRI.FlakCount,PRI.ComboCount,PRI.HeadCount,PRI.RanOverCount,PRI.DaredevilPoints);
 }
 
 function ServerUpdateStatArrays(TeamPlayerReplicationInfo PRI)
@@ -126,7 +126,7 @@ simulated function ClientSendCombos(TeamPlayerReplicationInfo PRI,byte Combos0, 
 }
 
 // if _RO_
-simulated function ClientSendStats(TeamPlayerReplicationInfo PRI, int newgoals, bool bNewFirstBlood, int newkills, int newsuicides, int newFlagTouches, int newFlagReturns, int newFlakCount, int newComboCount, int newHeadCount, int newRanOverCount/*, int newDaredevilPoints*/)
+simulated function ClientSendStats(TeamPlayerReplicationInfo PRI, int newgoals, bool bNewFirstBlood, int newkills, int newsuicides, int newFlagTouches, int newFlagReturns, int newFlakCount, int newComboCount, int newHeadCount, int newRanOverCount, optional int newDaredevilPoints)
 {
 	PRI.GoalsScored = newGoals;
 	PRI.bFirstBlood = bNewFirstBlood;
@@ -139,7 +139,7 @@ simulated function ClientSendStats(TeamPlayerReplicationInfo PRI, int newgoals, 
 	PRI.HeadCount = NewHeadCount;
 	PRI.RanOverCount = NewRanOverCount;
 	// if _RO_
-	//PRI.DaredevilPoints = NewDaredevilPoints;
+	PRI.DaredevilPoints = NewDaredevilPoints;
 
 	ServerUpdateStatArrays(PRI);
 }

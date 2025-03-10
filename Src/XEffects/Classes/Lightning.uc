@@ -44,10 +44,15 @@ simulated simulated function PostBeginPlay()
 
 defaultproperties
 {
+     bCollideActors=False
+     bBlockActors=False
+     LodBias=9.0
+     Style=STY_Normal
      DrawType=DT_Mesh
-     LifeSpan=0.600000
-     Mesh=VertMesh'XEffects.LightningMesh'
-     LODBias=9.000000
-     AmbientGlow=255
+     Mesh=LodMesh'LightningMesh'
+     DrawScale=1.000000
      ScaleGlow=10.000000
+     AmbientGlow=255
+     bUnlit=True
+	 LifeSpan=0.6
 }

@@ -52,7 +52,7 @@ function SetDelayedDamageInstigatorController(Controller C)
 	DelayedDamageInstigatorController = C;
 }
 
-function TakeDamage(int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType)
+function TakeDamage(int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType, optional int HitIndex)
 {
 	local Controller InstigatorController;
 
@@ -181,7 +181,7 @@ state ShotDown
 	}
 
 	function Timer() {}
-	function TakeDamage(int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType) {}
+	function TakeDamage(int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType, optional int HitIndex) {}
 }
 
 state BlowingUp extends ShotDown

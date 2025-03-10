@@ -17,7 +17,7 @@ simulated event PostBeginPlay()
 
 simulated function UpdateSwivelRotation( Rotator TurretRotation );
 
-function TakeDamage(int Damage, Pawn instigatedBy, Vector hitlocation, Vector momentum, class<DamageType> damageType) 
+function TakeDamage(int Damage, Pawn instigatedBy, Vector hitlocation, Vector momentum, class<DamageType> damageType, optional int HitIndex) 
 {
 	// Defer damage to Turret...
 	if ( Owner.Role == Role_Authority && InstigatedBy != Owner )

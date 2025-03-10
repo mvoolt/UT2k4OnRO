@@ -32,7 +32,7 @@ function SetDelayedDamageInstigatorController(Controller C)
 }
 
 function TakeDamage( int NDamage, Pawn instigatedBy, Vector hitlocation, 
-					Vector momentum, class<DamageType> damageType)
+					Vector momentum, class<DamageType> damageType, optional int HitIndex)
 {
 	if ( !bDamageable || (Health<0) ) 
 		return;

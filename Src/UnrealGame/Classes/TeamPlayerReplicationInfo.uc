@@ -34,7 +34,7 @@ var byte Spree[6];
 var byte MultiKills[7];
 var int Suicides;
 // if _RO_
-var int flakcount,combocount,headcount,ranovercount;//,DaredevilPoints;
+var int flakcount,combocount,headcount,ranovercount,DaredevilPoints;
 var byte Combos[5];
 
 replication
@@ -42,7 +42,7 @@ replication
 	reliable if ( bNetInitial && (Role == ROLE_Authority) )
 		LocalStatsScreenClass;
 	reliable if ( Role == ROLE_Authority )
-		Squad, bHolding; //, DareDevilPoints;
+		Squad, bHolding, DareDevilPoints;
 }
 
 simulated function PostBeginPlay()

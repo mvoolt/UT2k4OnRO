@@ -201,7 +201,7 @@ state OnGround
         }
     }
 
-    function TakeDamage( int Damage, Pawn InstigatedBy, Vector HitLocation, Vector Momentum, class<DamageType> DamageType )
+    function TakeDamage( int Damage, Pawn InstigatedBy, Vector HitLocation, Vector Momentum, class<DamageType> DamageType, optional int HitIndex)
     {
         if (DamageType.default.bDetonatesGoop)
         {

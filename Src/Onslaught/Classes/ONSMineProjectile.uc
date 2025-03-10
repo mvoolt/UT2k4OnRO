@@ -129,7 +129,7 @@ function WarnTarget()
 	}
 }
 
-function TakeDamage(int Damage, Pawn InstigatedBy, vector HitLocation, vector Momentum, class<DamageType> DamageType)
+function TakeDamage(int Damage, Pawn InstigatedBy, vector HitLocation, vector Momentum, class<DamageType> DamageType, optional int HitIndex)
 {
 	if ( Damage > 0 && InstigatedBy != None && (Instigator != InstigatedBy || DamageType != MyDamageType)
 	     && (Instigator == None || Instigator == InstigatedBy || InstigatedBy.GetTeamNum() != Instigator.GetTeamNum()) )

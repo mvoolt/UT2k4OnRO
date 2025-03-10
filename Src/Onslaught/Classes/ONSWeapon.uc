@@ -144,7 +144,10 @@ replication
         HitCount, LastHitLocation, bActive, bForceCenterAim, bCallInstigatorPostRender, Team;
 }
 
-native function int LimitPitch(int Pitch, rotator ForwardRotation, optional int WeaponYaw);
+function int LimitPitch(int Pitch, rotator ForwardRotation, optional int WeaponYaw) {
+    // somehow use ROEngine.ROVehicle's LimitPitch for this, they are 1:1 with UT2004's Onslaught.dll NEED AN USCRIPT PROFESSIONAL AT THIS
+    return Pitch;
+}
 
 simulated function DisplayDebug(Canvas Canvas, out float YL, out float YPos)
 {

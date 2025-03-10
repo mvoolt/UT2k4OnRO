@@ -341,7 +341,7 @@ defaultproperties
      bControllable=True
      bTeamControlled=True
      DefenderTeamIndex=255
-     DestructionMessage=
+     DestructionMessage=""
      LightType=LT_SubtlePulse
      LightEffect=LE_QuadraticNonIncidence
      LightHue=255

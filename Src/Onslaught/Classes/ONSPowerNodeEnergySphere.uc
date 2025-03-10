@@ -44,7 +44,7 @@ function SetInitialState()
 		disable('Tick');
 }
 
-function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation,	Vector momentum, class<DamageType> damageType)
+function TakeDamage( int Damage, Pawn instigatedBy, Vector hitlocation,	Vector momentum, class<DamageType> damageType, optional int HitIndex)
 {
 	if (PowerNode != None)
 		PowerNode.TakeDamage(Damage, instigatedBy, hitlocation, momentum, damageType);
