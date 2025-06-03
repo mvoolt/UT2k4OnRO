@@ -217,11 +217,8 @@ DefaultProperties
 
 	Begin Object Class=GUIButton Name=ReconnectButton
 		Caption="RECONNECT"
-// if _RO_
-        StyleName="SelectButton"
-// else
-//		StyleName="SquareButton"
-// end if _RO_
+		StyleName="SquareButton"
+
 		OnClick=InternalOnClick
 		TabOrder=0
 		WinWidth=0.132806
@@ -234,11 +231,8 @@ DefaultProperties
 
 	Begin Object Class=GUIButton Name=MainMenuButton
 		Caption="MAIN MENU"
-// if _RO_
-        StyleName="SelectButton"
-// else
-//		StyleName="SquareButton"
-// end if _RO_
+		StyleName="SquareButton"
+
 		OnClick=InternalOnClick
 		TabOrder=1
 		WinWidth=0.132806
@@ -251,11 +245,7 @@ DefaultProperties
 
 	Begin Object Class=GUIButton Name=ServerBrowserButton
 		Caption="SERVER BROWSER"
-// if _RO_
-        StyleName="SelectButton"
-// else
-//		StyleName="SquareButton"
-// end if _RO_
+		StyleName="SquareButton"
 		OnClick=InternalOnClick
 		TabOrder=2
 		WinWidth=0.223632
@@ -267,13 +257,8 @@ DefaultProperties
 	b_ServerBrowser=ServerBrowserButton
 
 	Begin Object Class=GUIButton Name=QuitButton
-// if _RO_
-		Caption="EXIT RED ORCHESTRA"
-        StyleName="SelectButton"
-// else
-//		Caption="EXIT UT2004"
-//		StyleName="SquareButton"
-// end if _RO_
+		Caption="EXIT UT2004"
+		StyleName="SquareButton"
 		OnClick=InternalOnClick
 		TabOrder=3
 		WinWidth=0.223632

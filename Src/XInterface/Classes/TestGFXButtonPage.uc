@@ -1,8 +1,6 @@
 class TestGFXButtonPage extends TestPageBase;
 
-// if _RO_
-/*
-// end if _RO_
+
 #exec OBJ LOAD FILE=InterfaceContent.utx
 
 var GUIGFXButton Btn;
@@ -28,18 +26,13 @@ function MyOnOpen()
 	ImgAlign.AddItem("Pressed");
 	ImgAlign.AddItem("Disabled");
 
-	// ifndef _RO_
-	//ImgSelect.AddItem("PlayerPictures.cEgyptFemaleBA");
+	ImgSelect.AddItem("PlayerPictures.cEgyptFemaleBA");
 	ImgSelect.AddItem("InterfaceContent.Menu.bg07");
-	// ifndef _RO_
-	//ImgSelect.AddItem("PlayerPictures.Galactic");
+	ImgSelect.AddItem("PlayerPictures.Galactic");
 	ImgSelect.AddItem("InterfaceContent.Menu.CO_Final");
 	ImgSelect.AddItem("InterfaceContent.BorderBoxF_Pulse");
 
-	// ifdef _RO_
-	SetNewImage("Engine.BlackTexture");
-	//else
-	//SetNewImage("PlayerPictures.cEgyptFemaleBA");
+	SetNewImage("PlayerPictures.cEgyptFemaleBA");
 }
 
 function OnNewImgStyle(GUIComponent Sender)
@@ -194,6 +187,4 @@ defaultproperties
 
 	OnOpen=MyOnOpen
 }
-// if _RO_
-*/
-// end if _RO_
+

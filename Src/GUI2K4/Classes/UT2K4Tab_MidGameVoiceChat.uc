@@ -646,9 +646,7 @@ DefaultProperties
 	End Object
 	ch_Ban=BanPlayer
 
-// if _RO_
-/*
-// end if _RO_
+
 	Begin Object Class=GUIButton Name=ResetButton
 		WinWidth=0.120067
 		WinHeight=0.051836
@@ -662,9 +660,6 @@ DefaultProperties
 		MenuState=MSAT_Disabled
 	End Object
 	b_Reset=ResetButton
-// if _RO_
-*/
-// end if _RO_
 
 	OnPreDraw=PreDraw
 	ApplySuccessText="Changes were saved successfully!"

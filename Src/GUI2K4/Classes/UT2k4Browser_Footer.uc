@@ -127,9 +127,7 @@ defaultproperties
     End Object
     t_StatusBar=BrowserStatus
 
-//if _RO_
-/*
-//end _RO_
+
 	Begin Object class=moCheckBox Name=OnlyStandardCheckBox
 		bStandardized=False
 		WinWidth=0.243945
@@ -145,9 +143,7 @@ defaultproperties
         FontScale=FNS_Small
 	End Object
 	ch_Standard=OnlyStandardCheckBox
-//if _RO_
-*/
-// end _RO_
+
 
 	Begin Object Class=GUIButton Name=BrowserFilter
 		Caption="FILTERS"

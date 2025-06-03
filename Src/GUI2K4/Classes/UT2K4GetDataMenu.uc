@@ -86,11 +86,7 @@ DefaultProperties
 
 	Begin Object class=GUILabel Name=DialogText
 		TextALign=TXTA_Center
-// if _RO_
-   		StyleName="TextLabel"
-// else
-//   		StyleName="TextButton"
-// end if _RO_
+   		StyleName="TextButton"
 		FontScale=FNS_Large
 		WinWidth=1
 		WinLeft=0

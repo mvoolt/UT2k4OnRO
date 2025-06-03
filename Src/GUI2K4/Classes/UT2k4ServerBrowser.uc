@@ -6,10 +6,8 @@
 class UT2K4ServerBrowser extends UT2K4MainPage
     config;
 
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_
+#exec OBJ LOAD FILE=InterfaceContent.utx
+
 
 var() globalconfig bool         bStandardServersOnly;
 var() config    string          CurrentGameType;
@@ -707,7 +705,7 @@ defaultproperties
     WinTop=0.0
     WinLeft=0.0
     bCheckResolution=true
-    CurrentGameType="ROEngine.ROTeamGame"	//"Onslaught.ONSOnslaughtGame"
+    CurrentGameType="Onslaught.ONSOnslaughtGame"
     bDrawFocusedLast=False
     bStandardServersOnly=True
 

@@ -7,11 +7,7 @@
 
 class UT2SettingsPage extends UT2K3GUIPage;
 
-#exec OBJ LOAD FILE=
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_InterfaceContent.utx
+#exec OBJ LOAD FILE=InterfaceContent.utx
 
 var localized string	VideoTabLabel,
 						VideoTabHint,
@@ -163,7 +159,7 @@ defaultproperties
 		WinHeight=46.000000
 		WinLeft=0
 		WinTop=0.036406
-		Effect=Texture'InterfaceArt_tex.Menu.changeme_texture' //material'CO_Final'
+		Effect=material'CO_Final'
 	End Object
 	Controls(0)=GUITitleBar'SettingHeader'
 
@@ -208,7 +204,7 @@ defaultproperties
 		WinHeight=0.13
 		WinLeft=0.830079
 		WinTop=0.800782
-		Image=Texture'InterfaceArt_tex.Menu.changeme_texture' //material'fbSymbolShader'
+		Image=material'fbSymbolShader'
 		ImageColor=(R=255,G=255,B=255,A=255);
 		ImageStyle=ISTY_Scaled
 		ImageRenderStyle=MSTY_Alpha
@@ -221,7 +217,7 @@ defaultproperties
 	OnClose=InternalOnClose
 	OnCanClose=InternalOnCanClose
 
-	Background=Texture'InterfaceArt_tex.Menu.changeme_texture' //Material'InterfaceContent.Backgrounds.bg11'
+	Background=Material'InterfaceContent.Backgrounds.bg11'
 	WinWidth=1.0
 	WinHeight=1.0
 	WinTop=0.0

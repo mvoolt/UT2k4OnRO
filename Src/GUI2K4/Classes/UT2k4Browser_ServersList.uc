@@ -1,10 +1,8 @@
 class UT2K4Browser_ServersList extends ServerBrowserMCList;
 
-// if _RO_
-// else
-//#exec OBJ LOAD file=..\Textures\Old2k4\ServerIcons.utx
-//#exec texture Import File=..\Xinterface\textures\UTClassicIcon.tga Name=S_UTClassic Mips=Off Alpha=1
-// end if _RO_
+#exec OBJ LOAD file=..\Textures\ServerIcons.utx
+#exec texture Import File=..\Xinterface\textures\UTClassicIcon.tga Name=S_UTClassic Mips=Off Alpha=1
+
 
 var() array<GameInfo.ServerResponseLine> Servers;
 
@@ -729,43 +727,18 @@ defaultproperties
     SortColumn=4
     SortDescending=False
 
-// if _RO_
-/*
-// end if _RO_
 
-    Icons(0)=material'ServerIcons.Password'
-    IconDescriptions(0)="Passworded"
-
-    Icons(1)=material'ServerIcons.Stats'
-    IconDescriptions(1)="Stats Enabled"
-
-    Icons(2)=material'ServerIcons.LatestVersion'
-    IconDescriptions(2)="Latest Version"
-
-    Icons(3)=material'ServerIcons.ListenServer'
-    IconDescriptions(3)="Listen Server"
-
-    Icons(4)=material'ServerIcons.Instagib'
-    IconDescriptions(4)="Instagib"
-
-    Icons(5)=material'ServerIcons.Standard'
-    IconDescriptions(5)="Standard Server"
-
-	// RO
     Icons(6)=material'S_UTClassic'
     IconDescriptions(6)="UT Classic"
 
-// if _RO_
-*/
     Icons(0)=Texture'InterfaceArt_tex.ServerIcons.passworded'
     IconDescriptions(0)="Passworded"
 
     Icons(1)=Texture'InterfaceArt_tex.ServerIcons.Stats'
     IconDescriptions(1)="Stats Enabled"
 
-	Icons(2)=none
-    //Icons(2)=Texture'InterfaceArt_tex.ServerIcons.latest_version'
-    //IconDescriptions(2)="Latest Version"
+    Icons(2)=Texture'InterfaceArt_tex.ServerIcons.latest_version'
+    IconDescriptions(2)="Latest Version"
 
     Icons(3)=Texture'InterfaceArt_tex.ServerIcons.listen2'
     IconDescriptions(3)="Listen Server"
@@ -773,9 +746,8 @@ defaultproperties
     Icons(4)=Texture'InterfaceArt_tex.ServerIcons.VAC_Servericon' // formerly instagib
     IconDescriptions(4)="VAC Secured"
 
-	Icons(5)=none
-    //Icons(5)=Texture'InterfaceArt_tex.ServerIcons.Standard'
-    //IconDescriptions(5)="Standard Server"
+    Icons(5)=Texture'InterfaceArt_tex.ServerIcons.Standard'
+    IconDescriptions(5)="Standard Server"
 
 // end if _RO_
 

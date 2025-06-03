@@ -80,12 +80,7 @@ defaultproperties
 {
 
 	Begin Object Class=FloatingImage Name=FloatingFrameBackground
-// if _RO_
-    // lazy emh
-		Image=Texture'InterfaceArt_tex.Menu.RODisplay'
-// else
-//		Image=Material'2K4Menus.NewControls.Display1'
-// end if _RO_
+		Image=Material'2K4Menus.NewControls.Display1'
 		ImageRenderStyle=MSTY_Normal
 		ImageStyle=ISTY_Stretched
 		ImageColor=(R=255,G=255,B=255,A=255)

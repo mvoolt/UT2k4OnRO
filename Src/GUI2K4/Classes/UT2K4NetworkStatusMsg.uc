@@ -100,11 +100,7 @@ defaultproperties
     StatusMessages(3)="Must Upgrade"
     StatusCodes(4)="RI_DevClient"
     StatusTitle(4)="Developer Mode"
-// if _RO_
-	StatusMessages(4)="Client is in Developer Mode!||Your client is currently operating in developer mode and it's access to the master server has been restricted.  Please restart the game and avoid using SET commands that may cause problems.  If the problem persists, please contact Steam Technicial support."
-// else
-//  StatusMessages(4)="Client is in Developer Mode!||Your client is currently operating in developer mode and it's access to the master server has been restricted.  Please restart the game and avoid using SET commands that may cause problems.  If the problem persists, please contact Atari Technical Support."
-// end if _RO_
+   StatusMessages(4)="Client is in Developer Mode!||Your client is currently operating in developer mode and it's access to the master server has been restricted.  Please restart the game and avoid using SET commands that may cause problems.  If the problem persists, please contact Atari Technical Support."
     StatusCodes(5)="RI_BadClient"
     StatusTitle(5)="Modified Client"
 	StatusMessages(5)="Modified Client!||Your copy of Red Orchestra: Ostfront 41-45 has in some way been modified.  Because of this, its access to the master server has been restricted.  If this problem persists, please reinstall the game or the latest patch.||This error has been logged at the master server."

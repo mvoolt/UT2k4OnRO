@@ -274,9 +274,7 @@ function DisplayHit(vector HitDir, int Damage, class<DamageType> damageType)
 
 function DrawDamageIndicators(Canvas C)
 {
-// if _RO_
-/*
-// end if _RO_
+
 	if ( DamageTime[0] > 0 )
 	{
 		C.SetPos(0,0);
@@ -338,9 +336,7 @@ function DrawDamageIndicators(Canvas C)
 	}
 	else
 		Emphasized[3] = 0;
-// if _RO_
-*/
-// end if _RO_
+
 
 }
 
@@ -772,11 +768,8 @@ function Draw2DLocationDot(Canvas C, vector Loc,float OffsetX, float OffsetY, fl
 
 	Scaling = 24*C.ClipX*HUDScale/1600;
 
-// if _RO_
-	C.DrawTile(LocationDot, Scaling, Scaling,0,0,31,31);
-// else
-//	C.DrawTile(LocationDot, Scaling, Scaling,340,432,78,78);
-// end if _ROR
+	C.DrawTile(LocationDot, Scaling, Scaling,340,432,78,78);
+
 }
 
 simulated function SetTargeting( bool bShow, optional Vector TargetLocation, optional float Size )
@@ -1209,19 +1202,19 @@ simulated function SetLCDMode( int newMode )
 
 defaultproperties
 {
-    TargetMaterial=Texture'InterfaceArt_tex.Menu.changeme_texture' //Material'InterfaceContent.Hud.fbBombFocus'
+    TargetMaterial=Material'InterfaceContent.Hud.fbBombFocus'
 
-    ProgressFontName="ROFonts.ROBtsrmVr12"//"UT2003Fonts.FontMedium"
+    ProgressFontName="UT2003Fonts.FontMedium"
 
-	FontArrayNames(0)="ROFonts.ROBtsrmVr38"//"UT2003Fonts.FontEurostile37"
-    FontArrayNames(1)="ROFonts.ROBtsrmVr28"//"UT2003Fonts.FontEurostile29"
-    FontArrayNames(2)="ROFonts.ROBtsrmVr24"//"UT2003Fonts.FontEurostile24"
-    FontArrayNames(3)="ROFonts.ROBtsrmVr22"//"UT2003Fonts.FontEurostile21"
-    FontArrayNames(4)="ROFonts.ROBtsrmVr18"//"UT2003Fonts.FontEurostile17"
-    FontArrayNames(5)="ROFonts.ROBtsrmVr14"//"UT2003Fonts.FontEurostile14"
-    FontArrayNames(6)="ROFonts.ROBtsrmVr12"//"UT2003Fonts.FontEurostile12"
-    FontArrayNames(7)="ROFonts.ROBtsrmVr9"//"UT2003Fonts.FontEurostile9"
-    FontArrayNames(8)="ROFonts.ROBtsrmVr7"//"UT2003Fonts.FontSmallText"		//6
+	FontArrayNames(0)="UT2003Fonts.FontEurostile37"
+    FontArrayNames(1)="UT2003Fonts.FontEurostile29"
+    FontArrayNames(2)="UT2003Fonts.FontEurostile24"
+    FontArrayNames(3)="UT2003Fonts.FontEurostile21"
+    FontArrayNames(4)="UT2003Fonts.FontEurostile17"
+    FontArrayNames(5)="UT2003Fonts.FontEurostile14"
+    FontArrayNames(6)="UT2003Fonts.FontEurostile12"
+    FontArrayNames(7)="UT2003Fonts.FontEurostile9"
+    FontArrayNames(8)="UT2003Fonts.FontSmallText"		//6
 
     FontScreenWidthMedium(0)=2048
     FontScreenWidthMedium(1)=1600
@@ -1246,7 +1239,7 @@ defaultproperties
     CroppingAmount=0.25
     InstructTextBorderX=10.0
     InstructTextBorderY=10.0
-	InstructionFontName="ROFonts.ROBtsrmVr7"//"UT2003Fonts.jFontMono800x600"
+	InstructionFontName="UT2003Fonts.jFontMono800x600"
 
 	WonMatchPrefix=""
 	WonMatchPostFix=" won the match!"
@@ -1260,32 +1253,26 @@ defaultproperties
 	InitialViewingString="Press Fire to View a different Player"
     LevelActionLoading="LOADING..."
     LevelActionPaused="PAUSED"
-    LevelActionFontName="ROFonts.ROBtsrmVr12"//"UT2003Fonts.FontMedium"
-// if _RO_
-    LocationDot=Texture'InterfaceArt_tex.Menu.checkBoxBall_b'
-// else
-//    LocationDot=Material'HudContent.Generic.HUD'
-// end if _RO_
+    LevelActionFontName="UT2003Fonts.FontMedium"
+    LocationDot=Material'HudContent.Generic.HUD'
+
 
 	bUseCustomWeaponCrosshairs=true
-// if _RO_
-	Crosshairs(0)=(WidgetTexture=Texture'InterfaceArt_tex.Cursors.Crosshair_Cross2',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-// else
-//	Crosshairs(0)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Cross1',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(1)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Cross2',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(2)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Cross3',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(3)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Cross4',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(4)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Cross5',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(5)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Dot',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(6)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Pointer',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.600000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(7)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Triad1',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.700000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(8)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Triad2',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.700000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(9)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Triad3',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.700000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(10)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Bracket1',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.600000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(11)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Bracket2',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.600000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(12)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Circle1',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.400000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-//	Crosshairs(13)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Circle2',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.400000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
-// end if _RO_
+
+	Crosshairs(0)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Cross1',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(1)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Cross2',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(2)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Cross3',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(3)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Cross4',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(4)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Cross5',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(5)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Dot',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.750000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(6)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Pointer',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.600000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(7)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Triad1',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.700000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(8)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Triad2',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.700000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(9)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Triad3',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.700000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(10)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Bracket1',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.600000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(11)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Bracket2',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.600000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(12)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Circle1',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.400000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
+	Crosshairs(13)=(WidgetTexture=Texture'Crosshairs.HUD.Crosshair_Circle2',RenderStyle=STY_Alpha,TextureCoords=(X2=64,Y2=64),TextureScale=0.400000,DrawPivot=DP_MiddleMiddle,PosX=0.500000,PosY=0.500000,Scale=1.000000,Tints[0]=(B=255,G=255,R=255,A=255),Tints[1]=(B=255,G=255,R=255,A=255))
 
 // G15 Support
 	LCDUpdateFreq=1.0

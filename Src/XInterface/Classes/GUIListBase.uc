@@ -12,10 +12,8 @@ class GUIListBase extends GUIComponent
         Native
         Abstract;
 
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_
+#exec OBJ LOAD FILE=InterfaceContent.utx
+
 
 cpptext
 {

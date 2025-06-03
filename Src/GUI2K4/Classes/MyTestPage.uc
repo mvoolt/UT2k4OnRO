@@ -4,10 +4,7 @@
 
 class MyTestPage extends TestPageBase;
 
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_
+#exec OBJ LOAD FILE=InterfaceContent.utx
 
 var Automated GUIHeader TabHeader;
 var Automated GUITabControl TabC;
@@ -63,7 +60,7 @@ defaultproperties
 		WinHeight=36.000000
 		WinLeft=0.000000
 		WinTop=0.005414
-		Effect=Texture'InterfaceArt_tex.Menu.changeme_texture' //material'CO_Final'
+		Effect=material'CO_Final'
 	End Object
 
 	Begin Object Class=GUITabControl Name=MyTabs
@@ -103,7 +100,7 @@ defaultproperties
 	TabFooter=MyFooter
 	BackButton=MyBackButton
 
-	Background=Texture'InterfaceArt_tex.Menu.changeme_texture' //Material'InterfaceContent.Backgrounds.bg11'
+	Background=Material'InterfaceContent.Backgrounds.bg11'
 	WinWidth=1.0
 	WinHeight=1.0
 	WinTop=0.0

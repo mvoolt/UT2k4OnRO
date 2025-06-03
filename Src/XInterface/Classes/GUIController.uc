@@ -18,10 +18,8 @@ class GUIController extends BaseGUIController
     Native;
 
 
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_
+#exec OBJ LOAD FILE=InterfaceContent.utx
+
 
 cpptext
 {
@@ -1438,10 +1436,7 @@ defaultproperties
     DefaultStyleNames(29)="XInterface.STY_EditBox"
     STYLE_NUM=30
 
-    // See Player.uc IDC_ definitions
-// if _RO_
-/*
-// end if _RO_
+
     MouseCursors(0)=material'InterfaceContent.MouseCursor'          // Arrow
     MouseCursors(1)=material'InterfaceContent.SplitterCursor'       // SizeAll
     MouseCursors(2)=material'InterfaceContent.SplitterCursor'       // Size NE SW
@@ -1449,9 +1444,7 @@ defaultproperties
     MouseCursors(4)=material'InterfaceContent.SplitterCursor'       // Size NW SE
     MouseCursors(5)=material'InterfaceContent.SplitterCursor'       // Size WE
     MouseCursors(6)=material'InterfaceContent.MouseCursor'          // Wait
-// if _RO_
-*/
-// end if _RO_
+
     CURSOR_NUM=7
 
     MouseCursorOffset(0)=(X=0,Y=0,Z=0)
@@ -1466,11 +1459,8 @@ defaultproperties
     CursorStep=1
     FastCursorStep=1
     // Design Mode stuff
-// if _RO
-    WhiteBorder=Texture'InterfaceArt_tex.Menu.WhiteBorder'
-// else
-//    WhiteBorder=Material'InterfaceContent.Menu.WhiteBorder'
-// end if _RO_
+    WhiteBorder=Material'InterfaceContent.Menu.WhiteBorder'
+
     DblClickWindow=0.5
 
     // Replaceme

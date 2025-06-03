@@ -42,15 +42,11 @@ function InitComponent(GUIController MyC, GUIComponent MyO)
 	sb_Options.ManageComponent(cb_Stats);
 // if _RO_
     sb_Options.ManageComponent(ck_VACOnly);
-/*
-// end if _RO_
+
 	sb_Options.ManageComponent(cb_WeaponStay);
 	sb_Options.ManageComponent(cb_Translocator);
-// if _RO_
-*/
-    RemoveComponent(cb_WeaponStay);
-    RemoveComponent(cb_Translocator);
-// end if _RO_
+
+
 	sb_Options.ManageComponent(cb_Mutators);
 
 	for (i=0;i<3;i++)
@@ -240,19 +236,14 @@ function bool OkClick(GUIComponent Server)
 	if ( ck_Bots.IsChecked() )
 		Rules[Cnt++] = BuildRule("nobots","true", QT_Equals);
 
-// if _RO_
     if ( ck_VACOnly.IsChecked() )
 		Rules[Cnt++] = BuildRule("vacsecure","true", QT_Equals);
-// end if _RO_
 
 	if (cb_Stats.GetIndex()==1)
 		Rules[Cnt++] = BuildRule("stats","true", QT_Equals);
 	else if (cb_Stats.GetIndex()==2)
 		Rules[Cnt++] = BuildRule("stats","false", QT_Equals);
 
-// if _RO_
-/*
-// end if _RO_
 	if (cb_WeaponStay.GetIndex()==1)
 		Rules[Cnt++] = BuildRule("weaponstay","true", QT_Equals);
 	else if (cb_WeaponStay.GetIndex()==2)
@@ -262,9 +253,6 @@ function bool OkClick(GUIComponent Server)
 		Rules[Cnt++] = BuildRule("transloc","true", QT_Equals);
 	else if (cb_Translocator.GetIndex()==2)
 		Rules[Cnt++] = BuildRule("transloc","false", QT_Equals);
-// if _RO_
-*/
-// end if _RO_
 
 	if (cb_Mutators.GetIndex()==0)
 		Rules[Cnt++] = BuildRule("nomutators","true", QT_Equals);
@@ -339,11 +327,7 @@ defaultproperties
 		Caption="Options..."
 		LeftPadding=0.0025
 		RightPadding=0.0025
-// if _RO_
-        TopPadding=0.2
-// else
-//		TopPadding=0.1
-// end if _RO_
+		TopPadding=0.1
 		bFillClient=true
 		BottomPadding=0.0025
 		NumColumns=2
@@ -408,7 +392,6 @@ defaultproperties
 	End Object
 	cb_Stats=cbStats
 
-// if _RO_
 	Begin Object class=moCheckBox name=ckVACOnly
 		WinWidth=0.5
 		WinLeft=0.25
@@ -419,7 +402,6 @@ defaultproperties
 		TabOrder=1
 	End Object
 	ck_VACOnly=ckVACOnly
-// end if _RO_
 
 	Begin Object class=moComboBox name=cbWeaponStay
 		WinWidth=0.5

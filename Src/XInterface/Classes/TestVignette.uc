@@ -1,10 +1,6 @@
 class TestVignette extends Vignette;
 
-#exec OBJ LOAD FILE=
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_InterfaceContent.utx
+#exec OBJ LOAD FILE=InterfaceContent.utx
 
 var() config array<string> Backgrounds;
 var() transient texture Background;
@@ -86,14 +82,13 @@ simulated event DrawVignette( Canvas C, float Progress )
 
 defaultproperties
 {
-    // ifndef _RO_
-	//Logo=Texture'InterfaceContent.Logos.Logo'
+    Logo=Texture'InterfaceContent.Logos.Logo'
     LogoScaleX=0.5
     LogoScaleY=0.5
     LogoPosX=0.49
     LogoPosY=0.25
 
-	LoadingFontName="ROFonts.ROMain36"//"ROFonts_old.Arial28"//"UT2003Fonts.FontLarge"
+	LoadingFontName="UT2003Fonts.FontLarge"
     LoadingString=". . . L O A D I N G . . ."
     LoadingPosX=0.5
     LoadingPosY=0.65

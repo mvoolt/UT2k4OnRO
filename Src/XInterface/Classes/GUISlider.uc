@@ -248,11 +248,7 @@ defaultproperties
 	bShowMarker=true
     bShowCaption=false
     MarkerWidth=0
-// if _RO_
-    FillImage=Texture'InterfaceArt_tex.Menu.SliderFillBlurry'
-// else
-//    FillImage=material'2K4Menus.NewControls.SliderFillBlurry'
-// end if _RO_
+    FillImage=material'2K4Menus.NewControls.SliderFillBlurry'
     bRequiresStyle=True
     bDrawPercentSign=false
     bShowValueTooltip=true

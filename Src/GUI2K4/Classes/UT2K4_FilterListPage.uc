@@ -177,9 +177,6 @@ DefaultProperties
 		TopPadding=0.0025
 		bFillClient=true
 		BottomPadding=0.0025
-// if _RO_
-        bNoCaption=true
-// end if _RO_
 	End Object
 	sb_Background=sbBackground
 

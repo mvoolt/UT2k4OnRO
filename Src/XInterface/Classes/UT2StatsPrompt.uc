@@ -93,11 +93,8 @@ defaultproperties
 	Controls(2)=GUIButton'NoButton'
 
 	Begin Object class=GUILabel Name=PromptHeader
-// if _RO_
-		Caption="This server has Red Orchestra Stats ENABLED!"
-// else
-//		Caption="This server has UT2003stats ENABLED!"
-// end if _RO_
+		Caption="This server has UT2003stats ENABLED!"
+
 		TextAlign=TXTA_Center
 		bMultiLine=True
 		TextColor=(R=220,G=220,B=220,A=255)

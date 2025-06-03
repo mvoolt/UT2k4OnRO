@@ -4,10 +4,8 @@
 
 class UT2K4MidGameMenu extends UT2K4GUIPage;
 
-//if _RO_
-// else
-//#EXEC OBJ LOAD FILE=2K4Menus.utx
-// end if _RO_
+#EXEC OBJ LOAD FILE=2K4Menus.utx
+
 
 var bool bIgnoreEsc;
 
@@ -274,7 +272,7 @@ DefaultProperties
 		WinHeight=64
 		WinLeft=0
 		WinTop=0
-		Image=Texture'InterfaceArt_tex.Menu.changeme_texture' //Material'2K4Menus.Controls.header'
+		Image=Material'2K4Menus.Controls.header'
 		ImageStyle=ISTY_Stretched
         ImageRenderStyle=MSTY_Normal
 		bVisible=true
@@ -290,11 +288,8 @@ DefaultProperties
     bContinue=ContMatchButton
 
 	Begin Object Class=GUIButton Name=QuitGameButton
-// if _RO_
-		Caption="EXIT RED ORCHESTRA"
-// else
-//		Caption="EXIT UT2004"
-// end if _RO_
+		Caption="EXIT UT2004"
+
 		StyleName="SquareButton"
 		OnClick=InternalOnClick
 		TabOrder=8

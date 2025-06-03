@@ -543,13 +543,9 @@ defaultproperties
     FooterText="Elapsed Time:"
 	ReadyText="READY"
 	NotReadyText="NOT RDY"
-	BoxMaterial=Texture'InterfaceArt_tex.Menu.changeme_texture' //Material'InterfaceContent.ScoreBoxA'
+	BoxMaterial=Material'InterfaceContent.ScoreBoxA'
 	OutText="OUT"
-// if _RO_
-    MatchIDText="Red Orchestra Stats Match ID"
-// else
-//     MatchIDText="UT2004 Stats Match ID"
-// end if _RO_
+       MatchIDText="UT2004 Stats Match ID"
 	OutFireText="   You are OUT. Fire to view other players."
 
 	skillLevel[0]="NOVICE"

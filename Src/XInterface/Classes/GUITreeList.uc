@@ -10,9 +10,9 @@
 
 class GUITreeList extends GUIVertList Native;
 
-#exec OBJ LOAD FILE=// if _RO_
+//#exec OBJ LOAD FILE=// if _RO_
 // else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
+#exec OBJ LOAD FILE=InterfaceContent.utx
 // end if _RO_InterfaceContent.utx
 
 cpptext

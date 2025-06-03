@@ -6,10 +6,7 @@
 //==============================================================================
 class UT2K4SettingsPage extends UT2K4MainPage;
 
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_
+#exec OBJ LOAD FILE=InterfaceContent.utx
 
 var Automated GUIButton b_Back;
 var Automated GUIButton b_Apply, b_Reset;

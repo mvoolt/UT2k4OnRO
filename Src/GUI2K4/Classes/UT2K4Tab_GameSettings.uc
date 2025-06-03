@@ -828,11 +828,7 @@ defaultproperties
     NetSpeedText(2)="Cable/ADSL"
     NetSpeedText(3)="LAN/T1"
 
-// if _RO_
-    StatsURL="http://www.redorchestragame.com/"
-// else
-//    StatsURL="http://ut2004stats.epicgames.com/"
-// end if _RO_
+    StatsURL="http://ut2004stats.epicgames.com/"
     EpicIDMsg="Your Unique id is:"
 
     WinTop=0.15

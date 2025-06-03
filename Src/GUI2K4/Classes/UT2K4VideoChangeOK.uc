@@ -224,11 +224,7 @@ defaultproperties
 	Begin Object class=GUILabel Name=lbText2
 		Caption="(Original settings will be restored in 15 seconds)"
 		TextAlign=TXTA_Center
-// if _RO_
-   		StyleName="TextLabel"
-// else
-//   		StyleName="TextButton"
-// end if _RO_
+   		StyleName="TextButton"
 		WinWidth=1
 		WinLeft=0
 		WinTop=0.46

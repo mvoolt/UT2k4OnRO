@@ -196,11 +196,7 @@ defaultproperties
 	c_Channel=ChannelTabControl
 
 	SystemLabel="System"
-// if _RO_
-	PanelCaption="Red Orchestra Internet Chat Client"
-// else
-//	PanelCaption="UT2004 Internet Chat Client"
-// end if _RO_
+	PanelCaption="UT2004 Internet Chat Client"
 	SystemPageClass="GUI2K4.UT2K4IRC_System"
 	PublicChannelClass="GUI2K4.UT2K4IRC_Channel"
 	PrivateChannelClass="GUI2K4.UT2K4IRC_Private"

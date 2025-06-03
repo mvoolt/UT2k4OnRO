@@ -109,8 +109,7 @@ defaultproperties
 	Begin Object Class=BackgroundImage Name=PageBackground
 //        Image=material'2K4Menus.Controls.menuBackground'
 		ImageStyle=ISTY_PartialScaled
-		// ifndef _RO_
-		//Image=Material'2K4Menus.BKRenders.bgndTile'
+		Image=Material'2K4Menus.BKRenders.bgndTile'
 		X1=0
 		Y1=0
 		X2=4
@@ -120,7 +119,7 @@ defaultproperties
 
 	Begin Object Class=BackgroundImage Name=PageScanLine
 		ImageStyle=ISTY_Tiled
-		Image=Texture'InterfaceArt_tex.Menu.changeme_texture' //Material'2K4Menus.BKRenders.ScanLines'
+		Image=Material'2K4Menus.BKRenders.ScanLines'
 		ImageRenderStyle=MSTY_Alpha
 		ImageColor=(R=255,G=255,B=255,A=32)
 		WinWidth=1.0
@@ -135,8 +134,7 @@ defaultproperties
 	End Object
 
 	Begin Object Class=GUIImage Name=BkChar
-	    // ifndef _RO_
-		//Image=material'2K4Menus.BKRenders.Char01'
+	    	Image=material'2K4Menus.BKRenders.Char01'
 		ImageStyle=ISTY_Scaled
 		ImageColor=(R=255,G=255,B=255,A=255)
 		X1=0
@@ -161,10 +159,7 @@ defaultproperties
 	bRestorable=True
 
 	Background=none
-// if _RO_
-// else
-//	i_bkScan=PageScanLine
-// end if _RO_
+	i_bkScan=PageScanLine
 	i_Background=PageBackground
 	i_BkChar=BkChar
 	c_Tabs=PageTabs

@@ -9,7 +9,7 @@ class UT2K4GUIController extends GUIController;
 
 // if _RO_
 // else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
+#exec OBJ LOAD FILE=InterfaceContent.utx
 // end if _RO_
 #exec OBJ LOAD FILE=ROMenuSounds.uax
 
@@ -254,34 +254,28 @@ defaultproperties
     DefaultStyleNames(59)="GUI2K4.sTY2AltComboButton"
     STYLE_NUM=60
 
-// if _RO_
-/*
-// end if _RO_
+
 	ImageList(0)=Material'2K4Menus.Controls.checkboxball_b'
-    ImageList(1)=Material'2K4Menus.NewControls.ComboListDropDown'
+    	ImageList(1)=Material'2K4Menus.NewControls.ComboListDropDown'
 	ImageList(2)=Material'2K4Menus.Newcontrols.LeftMark'
 	ImageList(3)=Material'2K4Menus.Newcontrols.RightMark'
 	ImageList(4)=Material'2K4Menus.Controls.plus_b'
 	ImageList(5)=Material'2K4Menus.Controls.minus_b'
 	ImageList(6)=Material'2K4Menus.NewControls.UpMark'
 	ImageList(7)=Material'2K4Menus.NewControls.DownMark'
-// if _RO_
-*/
-// end if _RO_
+
 
 	// ifndef _RO_
 	// Preload these menus to avoid hitches
-	//MainMenuOptions(0)="GUI2K4.UT2K4SP_Main"	// This must match the value for GameEngine.SinglePlayerMenuClass
-	//MainMenuOptions(1)="GUI2K4.UT2K4ServerBrowser"
-	//MainMenuOptions(2)="GUI2K4.UT2K4GamePageMP"
-	//MainMenuOptions(3)="GUI2K4.UT2K4GamePageSP"
-	//MainMenuOptions(4)="GUI2K4.UT2K4ModsAndDemos"
-	//MainMenuOptions(5)="GUI2k4.UT2K4SettingsPage"
-	//MainMenuOptions(6)="GUI2K4.UT2K4QuitPage"
+	MainMenuOptions(0)="GUI2K4.UT2K4SP_Main"	// This must match the value for GameEngine.SinglePlayerMenuClass
+	MainMenuOptions(1)="GUI2K4.UT2K4ServerBrowser"
+	MainMenuOptions(2)="GUI2K4.UT2K4GamePageMP"
+	MainMenuOptions(3)="GUI2K4.UT2K4GamePageSP"
+	MainMenuOptions(4)="GUI2K4.UT2K4ModsAndDemos"
+	MainMenuOptions(5)="GUI2k4.UT2K4SettingsPage"
+	MainMenuOptions(6)="GUI2K4.UT2K4QuitPage"
 
-// if _RO_
-/*
-// end if _RO_
+
     MouseCursors(0)=material'2K4Menus.Cursors.Pointer'          // Arrow
     MouseCursors(1)=material'2K4Menus.Cursors.ResizeAll'       // SizeAll
     MouseCursors(2)=material'2K4Menus.Cursors.ResizeSWNE'       // Size NE SW
@@ -289,9 +283,7 @@ defaultproperties
     MouseCursors(4)=material'2K4Menus.Cursors.ResizeNWSE'       // Size NW SE
     MouseCursors(5)=material'2K4Menus.Cursors.ResizeHorz'       // Size WE
     MouseCursors(6)=material'2K4Menus.Cursors.Pointer'          // Wait
-// if _RO_
-*/
-// end if _RO_
+
     CURSOR_NUM=7
 
     MouseCursorOffset(0)=(X=0,Y=0,Z=0)

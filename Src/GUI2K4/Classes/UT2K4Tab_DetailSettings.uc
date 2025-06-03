@@ -842,9 +842,7 @@ function SaveSettings()
 		bLevel = True;
 	}
 
-// if _RO_
-/*
-// end if _RO_
+
 	if ( iShadow != iShadowD )
 	{
 		if ( PC.Pawn != None && UnrealPawn(PC.Pawn) != None )
@@ -864,9 +862,7 @@ function SaveSettings()
 		class'Vehicle'.default.bVehicleShadows = iShadow > 0;
 		class'Vehicle'.static.StaticSaveConfig();
 	}
-// if _RO_
-*/
-// end if _RO_
+
 
 	if (bDynLight != bDynLightD)
 	{
@@ -986,9 +982,6 @@ function InternalOnChange(GUIComponent Sender)
 	local int i;
 	local PlayerController PC;
 	PC = PlayerOwner();
-	// IF _RO_
-	// we don't want this
-	//local sound snd;
 
 	Super.InternalOnChange(Sender);
 
@@ -1192,19 +1185,7 @@ function InternalOnChange(GUIComponent Sender)
 	if (bGoingUp)
 		ShowPerformanceWarning();
 
-	// Check if we are maxed out (and mature-enabled)!
-	// IF _RO_
-	// we don't want this
-//	if( !bPlayedSound && !PlayerOwner().bNoMatureLanguage && iTexture == 8
-//		&& iChar == 8 && iWorld == 5 && iPhys == 5 && iShadow == 2 &&
-//		bWeather && bDecal && bDynLight && bProj && bFol &&
-//		bCorona && bTexture && iDecal == 2 && iMeshLOD == 8 )
-//	{
-//		snd = sound(DynamicLoadObject("AnnouncerMale2K4.HolyShit_F", class'Sound'));
-//		if ( snd != None ) PlayerOwner().ClientPlaySound(snd);
-//		bPlayedSound = true;
-//	}
-	// end if _RO_
+
 }
 
 function bool RenderDeviceClick( byte Btn )
@@ -1585,11 +1566,8 @@ function UpdateDecalStay()
 defaultproperties
 {
 	OnPreDraw=InternalOnPreDraw
-// if _RO_
-	RelaunchQuestion="The graphics mode has been successfully changed.  However, it will not take effect until the next time the game is started.  Would you like to restart Red Orchestra right now?"
-// else
-//	RelaunchQuestion="The graphics mode has been successfully changed.  However, it will not take effect until the next time the game is started.  Would you like to restart UT2004 right now?"
-// end if _RO_
+	RelaunchQuestion="The graphics mode has been successfully changed.  However, it will not take effect until the next time the game is started.  Would you like to restart UT2004 right now?"
+
 	Begin Object class=GUISectionBackground Name=sbSection1
 		WinWidth=0.491849
 		WinHeight=0.440729
@@ -1756,8 +1734,7 @@ defaultproperties
 		WinHeight=0.532117
 		WinLeft=0.013477
 		WinTop=0.450001
-		// ifndef _RO_
-		//Image=material'2K4Menus.Controls.gamma'
+		Image=material'2K4Menus.Controls.gamma'
 		ImageColor=(R=255,G=255,B=255,A=255)
         OnChange=InternalOnChange
 		ImageRenderStyle=MSTY_Normal

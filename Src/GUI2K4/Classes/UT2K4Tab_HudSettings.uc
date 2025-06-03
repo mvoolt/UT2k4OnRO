@@ -13,21 +13,14 @@ var automated GUIImage	i_Scale, i_PreviewBG, i_Preview;
 var automated moSlider	sl_Scale, sl_Opacity, sl_Red, sl_Green, sl_Blue;
 var automated moNumericEdit	nu_MsgCount, nu_MsgScale, nu_MsgOffset;
 var automated moCheckBox	ch_Visible, ch_Weapons, ch_Personal, ch_Score, ch_WeaponBar,
-// if _RO_
-							ch_DeathMsgs, ch_EnemyNames, ch_CustomColor;
-// else
-//							ch_Portraits,  ch_VCPortraits, ch_DeathMsgs, ch_EnemyNames, ch_CustomColor;
-// end if _RO_
+							ch_Portraits,  ch_VCPortraits, ch_DeathMsgs, ch_EnemyNames, ch_CustomColor;
+
 
 
 var automated GUIComboBox co_CustomHUD;
 var automated GUIButton b_CustomHUD;
 
-// if _RO_
-var() bool bVis, bWeapons, bPersonal, bScore, bNames, bCustomColor, bNoMsgs, bWeaponBar;
-// else
-// var() bool bVis, bWeapons, bPersonal, bScore, bPortraits, bVCPortraits, bNames, bCustomColor, bNoMsgs, bWeaponBar;
-// end if _RO_
+var() bool bVis, bWeapons, bPersonal, bScore, bPortraits, bVCPortraits, bNames, bCustomColor, bNoMsgs, bWeaponBar;
 var() int iCount, iScale, iOffset;
 var() float fScale, fOpacity;
 var() color cCustom;
@@ -61,11 +54,8 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
     i_BG1.ManageComponent(ch_Weapons);
     i_BG1.ManageComponent(ch_Personal);
     i_BG1.ManageComponent(ch_Score);
-// if _RO_
-// else
-//    i_BG1.ManageComponent(ch_Portraits);
-//    i_BG1.ManageComponent(ch_VCPortraits);
-// end if _RO_
+    i_BG1.ManageComponent(ch_Portraits);
+    i_BG1.ManageComponent(ch_VCPortraits);
     i_BG1.ManageComponent(ch_DeathMsgs);
     i_BG1.ManageComponent(nu_MsgCount);
     i_BG1.ManageComponent(nu_MsgScale);
@@ -126,16 +116,10 @@ function InternalOnLoadINI(GUIComponent Sender, string s)
 		ch_WeaponBar.SetComponentValue(bWeaponBar,true);
 		break;
 
-// if _RO_
-/*
-// end if _RO_
 	case ch_Portraits:
 		bPortraits = H.bShowPortrait;
 		ch_Portraits.SetComponentValue(bPortraits,true);
 		break;
-// if _RO_
-*/
-// end if _RO_
 
 	case ch_EnemyNames:
 		bNames = !H.bNoEnemyNames;
@@ -163,16 +147,10 @@ function InternalOnLoadINI(GUIComponent Sender, string s)
 		InitializeHUDColor();
 		break;
 
-// if _RO_
-/*
-// end if _RO_
 	case ch_VCPortraits:
 		bVCPortraits = H.bShowPortraitVC;
 		ch_VCPortraits.SetComponentValue(bVCPortraits,true);
 		break;
-// if _RO_
-*/
-// end if _RO_
 
 	default:
 		log(Name@"Unknown component calling LoadINI:"$ GUIMenuOption(Sender).Caption);
@@ -274,9 +252,6 @@ function SaveSettings()
 		bSave = True;
 	}
 
-// if _RO_
-/*
-// end if _RO_
 	if ( H.bShowPortrait != bPortraits )
 	{
 		H.bShowPortrait = bPortraits;
@@ -288,9 +263,6 @@ function SaveSettings()
 		H.bShowPortraitVC = bVCPortraits;
 		bSave = True;
 	}
-// if _RO_
-*/
-// end if _RO_
 
 	if ( H.bNoEnemyNames == bNames )
 	{
@@ -451,9 +423,6 @@ function InternalOnChange(GUIComponent Sender)
         bNoMsgs = ch_DeathMsgs.IsChecked();
         break;
 
-// if _RO_
-/*
-// end if _RO_
 	case ch_Portraits:
 		bPortraits = ch_Portraits.IsChecked();
 		break;
@@ -461,9 +430,6 @@ function InternalOnChange(GUIComponent Sender)
 	case ch_VCPortraits:
 		bVCPortraits = ch_VCPortraits.IsChecked();
 		break;
-// if _RO_
-*/
-// end if _RO_
 
 	case ch_EnemyNames:
 		bNames = ch_EnemyNames.IsChecked();
@@ -681,9 +647,6 @@ defaultproperties
 	End Object
 	ch_Score=GameHudShowScore
 
-// if _RO_
-/*
-// end if _RO_
 	Begin Object class=moCheckBox Name=GameHudShowPortraits
 		WinWidth=0.378125
 		WinLeft=0.050000
@@ -717,9 +680,6 @@ defaultproperties
 		TabOrder=7
 	End Object
 	ch_VCPortraits=GameHUDShowVCPortraits
-// if _RO_
-*/
-// end if _RO_
 
     Begin Object class=moCheckBox Name=GameDeathMsgs
         WinWidth=0.403711

@@ -25,11 +25,7 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
         p_Anchor = UT2K4GamePageBase(Controller.ActivePage);
 
     ch_Advanced.Checked(Controller.bExpertMode);
-// if _RO_
-    // wtf? why does this thing set position absolutely like this
-// else
-//    lb_Rules.SetPosition(0.024912,0.080739, 0.950175,0.713178);
-// end if _RO_
+    lb_Rules.SetPosition(0.024912,0.080739, 0.950175,0.713178);
     li_Rules.ColumnWidth=0.96;
 }
 
@@ -284,7 +280,7 @@ DefaultProperties
 		WinLeft=0.000505
 		WinTop=0.014733
 		ImageStyle=ISTY_Stretched
-		Image=Texture'InterfaceArt_tex.Menu.changeme_texture' //material'2K4Menus.Newcontrols.Display99'
+		Image=material'2K4Menus.Newcontrols.Display99'
 	End Object
 	i_BK=BK1
 

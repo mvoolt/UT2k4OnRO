@@ -5,10 +5,7 @@
 
 class ServerBrowser extends UT2K3GUIPage;
 
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_
+#exec OBJ LOAD FILE=InterfaceContent.utx
 
 var Browser_Page MOTDPage;
 
@@ -289,7 +286,7 @@ defaultproperties
 	End Object
 	Controls(1)=GUITabControl'ServerBrowserTabs'
 
-	Background=Texture'InterfaceArt_tex.Menu.changeme_texture' //Material'InterfaceContent.Backgrounds.bg10'
+	Background=Material'InterfaceContent.Backgrounds.bg10'
 	WinWidth=1.0
 	WinHeight=1.0
 	WinTop=0.0

@@ -195,35 +195,23 @@ defaultproperties
 	OnPreDraw=InternalPreDraw
 	CaptionStyleName="TextLabel"
 	FontScale=FNS_Small
-// if _RO_
-    // lazy emh
-    //HeaderTop=Texture'ROInterfaceArt.button_normal'
-    HeaderTop=Texture'InterfaceArt_tex.Menu.SectionHeader_captionbar'
-    HeaderBar=Texture'InterfaceArt_tex.Menu.empty'
-    //HeaderBase=Texture'RO2Menu_old.RODisplay'
-    HeaderBase=Texture'InterfaceArt_tex.Menu.RODisplay_withcaption'
-// else
-//    HeaderTop=material'2K4Menus.NewControls.ComboTickFocused'
-//    HeaderBar=material'2K4Menus.NewControls.NewSliderBar'
-//    HeaderBase=material'2K4Menus.NewControls.Display98'
-// end if _RO_
+
+    HeaderTop=material'2K4Menus.NewControls.ComboTickFocused'
+    HeaderBar=material'2K4Menus.NewControls.NewSliderBar'
+    HeaderBase=material'2K4Menus.NewControls.Display98'
+
     TopPadding=0
     LeftPadding=0.05
     RightPadding=0.05
     BottomPadding=0
     ColPadding=0.05
 
-// if _RO_
-    ImageOffset(0)=10
-    ImageOffset(1)=35
-    ImageOffset(2)=10
-    ImageOffset(3)=10
-// else
-//    ImageOffset(0)=16
-//    ImageOffset(1)=44
-//    ImageOffset(2)=16
-//    ImageOffset(3)=18
-// end if _RO_
+
+    ImageOffset(0)=16
+    ImageOffset(1)=44
+    ImageOffset(2)=16
+    ImageOffset(3)=18
+
 
     NumColumns=1
     bFillClient=false

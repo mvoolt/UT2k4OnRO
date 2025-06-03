@@ -100,22 +100,11 @@ defaultproperties
     ImgHeights(3)=-1.0
     ImgHeights(4)=-1.0
 
-// if _RO_
-/*
-// end if _RO_
     FontColors(0)=(R=0,G=0,B=64,A=255)
     FontColors(1)=(R=0,G=0,B=64,A=255)
     FontColors(2)=(R=32,G=32,B=80,A=255)
     FontColors(3)=(R=32,G=32,B=80,A=255)
     FontColors(4)=(R=0,G=0,B=128,A=255)
-// if _RO_
-*/
-    FontColors(0)=(R=225,G=225,B=225,A=255)
-    FontColors(1)=(R=255,G=255,B=255,A=255)
-    FontColors(2)=(R=225,G=225,B=225,A=255)
-    FontColors(3)=(R=225,G=225,B=225,A=255)
-    FontColors(4)=(R=125,G=125,B=125,A=255)
-// end if _RO_
 
     FontBKColors(0)=(R=0,G=0,B=0,A=255)
     FontBKColors(1)=(R=0,G=0,B=0,A=255)

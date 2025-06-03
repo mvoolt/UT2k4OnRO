@@ -18,13 +18,7 @@ DefaultProperties
 		WinHeight=1
 		WinLeft=0
 		WinTop=0
-// if _RO_
-        // easier to fix here than changing everywhere --emh
-        Image=Texture'InterfaceArt_tex.Menu.Quitmenu'
-        ImageStyle=ISTY_Scaled
-// else
-//		Image=material'2K4Menus.NewControls.Display2'
-// end if _RO_
+		Image=material'2K4Menus.NewControls.Display2'
 		bBoundToParent=true
 		bScaleToParent=true
         DropShadowX=0

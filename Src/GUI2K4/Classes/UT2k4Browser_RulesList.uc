@@ -144,11 +144,7 @@ defaultproperties
     AdminNameString="Server Admin"
     AdminEmailString="Admin Email"
     PasswordString="Requires Password"
-// if _RO_
-    GameStatsString="Red Orchestra Stats"
-// else
-//    GameStatsString="UT2004 Stats"
-// end if _RO_
+    GameStatsString="UT2004 Stats"
     GameSpeedString="Game Speed"
     MutatorString="Mutator"
     BalanceTeamsString="Bots Balance Teams"

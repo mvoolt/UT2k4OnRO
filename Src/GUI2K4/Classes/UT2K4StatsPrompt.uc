@@ -38,8 +38,7 @@ function ReOpen()
 defaultproperties
 {
     Begin Object Class=GUIImage Name=menuBackground
-    	// ifndef _RO_
-        //Image=material'2K4Menus.Controls.menuBackground'
+    	Image=material'2K4Menus.Controls.menuBackground'
         ImageStyle=ISTY_Scaled
         ImageRenderStyle=MSTY_Normal
         ImageColor=(R=255,G=255,B=255,A=255)
@@ -61,10 +60,10 @@ defaultproperties
 		WinHeight=251.000000
 		WinLeft=0.000000
 		WinTop=0.000000
-		Image=Texture'InterfaceArt_tex.Menu.changeme_texture' //Material'2K4Menus.Controls.editbox_b'
+		Image=Material'2K4Menus.Controls.editbox_b'
 		ImageStyle=ISTY_Stretched
         ImageRenderStyle=MSTY_Normal
-        DropShadow=Texture'InterfaceArt_tex.Menu.changeme_texture' //Material'2K4Menus.Controls.shadow'
+        DropShadow=Material'2K4Menus.Controls.shadow'
         DropShadowX=0
         DropShadowY=10
 		bBoundToParent=true
@@ -95,11 +94,7 @@ defaultproperties
 	b_Cancel=NoButton
 
 	Begin Object class=GUILabel Name=PromptHeader
-// if _RO_
-		Caption="This server has Red Orchestra stats ENABLED!"
-// else
-//		Caption="This server has UT2004 stats ENABLED!"
-// end if _RO_
+		Caption="This server has UT2004 stats ENABLED!"
 		TextAlign=TXTA_Center
 		StyleName="TextLabel"
 		FontScale=FNS_Large

@@ -207,11 +207,8 @@ function DrawTeam(int TeamNum, int PlayerCount, int OwnerOffset, Canvas Canvas, 
 
 	Canvas.DrawColor = 0.75 * HUDClass.default.WhiteColor;
 	Canvas.SetPos(BoxXPos, ScoreYPos - BoxSpaceY);
-// if _RO_
-	Canvas.DrawTileStretched( Texture'InterfaceArt_tex.Menu.RODisplay', BoxWidth, HeaderOffsetY + BoxSpaceY - ScoreYPos);
-// else
-//	Canvas.DrawTileStretched( Material'InterfaceContent.ScoreBoxA', BoxWidth, HeaderOffsetY + BoxSpaceY - ScoreYPos);
-// end if _RO_
+	Canvas.DrawTileStretched( Material'InterfaceContent.ScoreBoxA', BoxWidth, HeaderOffsetY + BoxSpaceY - ScoreYPos);
+
 
 	Canvas.Style = ERenderStyle.STY_Normal;
 	Canvas.DrawColor = TeamColors[TeamNum];
@@ -247,11 +244,7 @@ function DrawTeam(int TeamNum, int PlayerCount, int OwnerOffset, Canvas Canvas, 
 	for ( i=1; i<LastLine; i++ )
 	{
 		Canvas.SetPos( NameXPos, HeaderOffsetY + (PlayerBoxSizeY + BoxSpaceY)*i - 0.5*BoxSpaceY);
-// if _RO_
-		Canvas.DrawTileStretched( Texture'InterfaceArt_tex.Menu.RODisplay', 0.9*BoxWidth, ScorebackScale*3);
-// else
-//		Canvas.DrawTileStretched( Material'InterfaceContent.ButtonBob', 0.9*BoxWidth, ScorebackScale*3);
-// end if _RO_
+		Canvas.DrawTileStretched( Material'InterfaceContent.ButtonBob', 0.9*BoxWidth, ScorebackScale*3);
 	}
 	Canvas.DrawColor = HUDClass.default.WhiteColor;
 
@@ -454,17 +447,13 @@ function DrawTeam(int TeamNum, int PlayerCount, int OwnerOffset, Canvas Canvas, 
 
 defaultproperties
 {
-// IF _RO_
-	ScoreBoardU=none//Material'MenuEffects.ScoreboardU_FB'
-	FlagIcon=none//Material'MenuEffects.ScoreboardU_FB'
-	ScoreBack=none//Material'MenuEffects.ScoreIcon_FB'
-// if _RO_
-	TeamBoxMaterial(0)=Texture'InterfaceArt_tex.Menu.RODisplay'
-	TeamBoxMaterial(1)=Texture'InterfaceArt_tex.Menu.RODisplay'
-// else
-//	TeamBoxMaterial(0)=Material'InterfaceContent.ScoreBoxC'
-//	TeamBoxMaterial(1)=Material'InterfaceContent.ScoreBoxB'
-// end if _RO_
+	ScoreBoardU=Material'MenuEffects.ScoreboardU_FB'
+	FlagIcon=Material'MenuEffects.ScoreboardU_FB'
+	ScoreBack=Material'MenuEffects.ScoreIcon_FB'
+
+	TeamBoxMaterial(0)=Material'InterfaceContent.ScoreBoxC'
+	TeamBoxMaterial(1)=Material'InterfaceContent.ScoreBoxB'
+
 	TeamColors(0)=(R=255,G=0,B=0,A=255)
 	TeamColors(1)=(R=0,G=0,B=255,A=255)
 	FragLimit="SCORE LIMIT:"

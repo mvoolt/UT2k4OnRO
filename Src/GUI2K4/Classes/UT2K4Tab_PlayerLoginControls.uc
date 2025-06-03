@@ -311,20 +311,14 @@ function bool InternalOnPreDraw(Canvas C)
 			{
 				if (PlayerOwner().PlayerReplicationInfo.Team.TeamIndex == 0)
 				{
-// if _RO_
-					sb_Red.HeaderBase = Texture'InterfaceArt_tex.Menu.changeme_texture';
-// else
-//					sb_Red.HeaderBase = texture'Display95';
-// end if _RO_
+
+					sb_Red.HeaderBase = texture'Display95';
+
 					sb_Blue.HeaderBase = sb_blue.default.headerbase;
 				}
 				else
 				{
-// if _RO_
-					sb_Blue.HeaderBase = Texture'InterfaceArt_tex.Menu.changeme_texture';
-// else
-//					sb_Blue.HeaderBase = texture'Display95';
-// end if _RO_
+					sb_Blue.HeaderBase = texture'Display95';
 					sb_Red.HeaderBase = sb_blue.default.headerbase;
 				}
 			}

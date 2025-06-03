@@ -69,11 +69,7 @@ DefaultProperties
 
 	Begin Object Class=GUIButton Name=GetPassRetry
 		Caption="RETRY"
-// if _RO_
-        StyleName="SelectButton"
-// else
-//		StyleName="SquareButton"
-// end if _RO_
+		StyleName="SquareButton"
 		OnClick=InternalOnClick
 		bBoundToParent=true
 		WinWidth=0.131641
@@ -86,11 +82,7 @@ DefaultProperties
 
 	Begin Object Class=GUIButton Name=GetPassFail
 		Caption="CANCEL"
-// if _RO_
-        StyleName="SelectButton"
-// else
-//		StyleName="SquareButton"
-// end if _RO_
+		StyleName="SquareButton"
 		OnClick=InternalOnClick
 		bBoundToParent=true
 		WinWidth=0.1475

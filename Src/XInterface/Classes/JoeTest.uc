@@ -5,10 +5,7 @@
 
 class JoeTest extends TestPageBase;
 
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_
+#exec OBJ LOAD FILE=InterfaceContent.utx
 
 function InitComponent(GUIController MyController, GUIComponent MyOwner)
 {
@@ -31,7 +28,7 @@ function bool OnClick2(GUIComponent Sender)
 defaultproperties
 {
 	Begin Object Class=GUIImage Name=TitleStrip
-		Image=Texture'InterfaceArt_tex.Menu.changeme_texture' //Texture'BorderBoxD'
+		Image=Texture'BorderBoxD'
 		ImageStyle=ISTY_Stretched
 		ImageColor=(R=255,G=255,B=255,A=255)
 		WinWidth=0.9
@@ -79,7 +76,7 @@ defaultproperties
 		Name="TestNumEdit2"
 	End Object
 	Controls(4)=GUIEditBox'TestNumEdit2'
-	Background=Texture'InterfaceArt_tex.Menu.changeme_texture' //Material'InterfaceContent.Backgrounds.bg10'
+	Background=Material'InterfaceContent.Backgrounds.bg10'
 	WinWidth=1.0
 	WinHeight=1.0
 	WinTop=0.0

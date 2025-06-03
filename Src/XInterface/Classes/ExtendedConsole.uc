@@ -5,10 +5,8 @@
 class ExtendedConsole extends Console;
 
 #exec OBJ LOAD FILE=ROMenuSounds.uax
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_
+#exec OBJ LOAD FILE=InterfaceContent.utx
+
 
 // Visible Console stuff
 var globalconfig int MaxScrollbackSize;
@@ -57,11 +55,7 @@ var config float SMOriginX;
 var config float SMOriginY;
 var float SMMargin, SMTab;
 
-// if _RO_
 var localized 	string  SMStateName[20];
-// else
-// var localized 	string  SMStateName[10];
-// end if _RO_
 var localized 	string  SMChannelOptions[3];
 var				array<VoiceChatRoom> VoiceChannels;
 var localized 	string  SMAllString;
@@ -689,20 +683,16 @@ state ConsoleVisible
 		Canvas.SetPos(0,0);
 		Canvas.SetDrawColor(255,255,255,200);
 		Canvas.Style=4;
-// if _RO_
-        Canvas.DrawTileStretched(Texture'InterfaceArt_tex.HUD.console_background',Canvas.ClipX,yClip);
-// else
-//		Canvas.DrawTileStretched(material'ConsoleBack',Canvas.ClipX,yClip);
-// end if _RO_
+
+		Canvas.DrawTileStretched(material'ConsoleBack',Canvas.ClipX,yClip);
+
 		Canvas.Style=1;
 
 		Canvas.SetPos(0,yclip-1);
 		Canvas.SetDrawColor(255,255,255,255);
-// if _RO_
-        Canvas.DrawTile(Texture'InterfaceArt_tex.Menu.RODisplay',Canvas.ClipX,2,0,0,64,2);
-// else
-//		Canvas.DrawTile(texture 'InterfaceContent.Menu.BorderBoxA',Canvas.ClipX,2,0,0,64,2);
-// end if _RO_
+
+		Canvas.DrawTile(texture 'InterfaceContent.Menu.BorderBoxA',Canvas.ClipX,2,0,0,64,2);
+
 
 		Canvas.SetDrawColor(255,255,255,255);
 
@@ -1707,20 +1697,17 @@ state SpeechMenuVisible
 		YMax -= Canvas.ClipY * SMOriginY;
 		Canvas.SetDrawColor(255,255,255,255);
 		Canvas.SetPos(Canvas.ClipX * SMOriginX, Canvas.ClipY * SMOriginY);
-// if _RO_
-// else
-//		Canvas.DrawTileStretched(texture 'InterfaceContent.Menu.BorderBoxD', XMax + (SMMargin*Canvas.ClipX), YMax + (SMMargin*Canvas.ClipY));
-// end if _RO_
+
+		Canvas.DrawTileStretched(texture 'InterfaceContent.Menu.BorderBoxD', XMax + (SMMargin*Canvas.ClipX), YMax + (SMMargin*Canvas.ClipY));
+
 
 		// Draw highlight
 		if(bSpeechMenuUseMouseWheel)
 		{
 			Canvas.SetDrawColor(255,255,255,128);
 			Canvas.SetPos( Canvas.ClipX*SMOriginX, Canvas.ClipY*(SMOriginY+SMMargin) + ((HighlightRow - 0.1)*SMLineSpace) );
-// if _RO_
-// else
-//			Canvas.DrawTileStretched(texture 'InterfaceContent.Menu.BorderBoxD', XMax + (SMMargin*Canvas.ClipX), 1.1*SMLineSpace );
-// end if _RO_
+			Canvas.DrawTileStretched(texture 'InterfaceContent.Menu.BorderBoxD', XMax + (SMMargin*Canvas.ClipX), 1.1*SMLineSpace );
+
 		}
 
 		// Then actually draw the stuff
@@ -1730,10 +1717,7 @@ state SpeechMenuVisible
 		// Finally, draw a nice title bar.
 		Canvas.SetDrawColor(255,255,255,255);
 		Canvas.SetPos(Canvas.ClipX*SMOriginX, (Canvas.ClipY*SMOriginY) - (1.5*SMLineSpace));
-// if _RO_
-// else
-//		Canvas.DrawTileStretched(texture 'InterfaceContent.Menu.BorderBoxD', XMax + (SMMargin*Canvas.ClipX), (1.5*SMLineSpace));
-// end if _RO_
+		Canvas.DrawTileStretched(texture 'InterfaceContent.Menu.BorderBoxD', XMax + (SMMargin*Canvas.ClipX), (1.5*SMLineSpace));
 
 		Canvas.SetDrawColor(255,255,128,255);
 		Canvas.SetPos(Canvas.ClipX*(SMOriginX+SMMargin), (Canvas.ClipY*SMOriginY) - (1.2*SMLineSpace));

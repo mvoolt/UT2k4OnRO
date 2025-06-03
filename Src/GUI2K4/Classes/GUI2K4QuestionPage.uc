@@ -21,17 +21,11 @@ function bool ButtonClick(GUIComponent Sender)
 defaultproperties
 {
 	Begin Object Class=GUIImage Name=imgBack
-// if _RO_
-        // easier to change here than change everywhere else --emh
-		Image=Texture'InterfaceArt_tex.Menu.Quitmenu'
-		ImageStyle=ISTY_Scaled
+		Image=material'2K4Menus.NewControls.Display2'
+		ImageStyle=ISTY_Stretched
 		ImageRenderStyle=MSTY_Normal
-// else
-//		Image=material'2K4Menus.NewControls.Display2'
-//		ImageStyle=ISTY_Stretched
-//		ImageRenderStyle=MSTY_Normal
-//		DropShadow=Material'2K4Menus.Controls.shadow'
-// end if _RO_
+		DropShadow=Material'2K4Menus.Controls.shadow'
+
 		DropShadowX=0
 		DropShadowY=10
 		WinWidth=1.000000

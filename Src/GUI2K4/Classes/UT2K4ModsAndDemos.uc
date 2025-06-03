@@ -4,10 +4,7 @@
 
 class UT2K4ModsAndDemos extends Ut2K4MainPage;
 
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_
+#exec OBJ LOAD FILE=InterfaceContent.utx
 
 var Ut2K4Community				tp_Community;
 var UT2K4UserMods				tp_UserMods;
@@ -141,11 +138,6 @@ defaultproperties
     // so override new default of true, for now
     bPersistent=False
 
-// if _RO_
-	ConnectFailed="The Red Orchestra master server could not be reached.  Please try again later."
-	ConnectTimeout="Your connection to the Red Orchestra master server has timed out."
-// else
-//	ConnectFailed="The UT2004 master server could not be reached.  Please try again later."
-//	ConnectTimeout="Your connection to the UT2004 master server has timed out"
-// end if _RO_
+	ConnectFailed="The UT2004 master server could not be reached.  Please try again later."
+	ConnectTimeout="Your connection to the UT2004 master server has timed out"
 }

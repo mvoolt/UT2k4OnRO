@@ -7,11 +7,8 @@
 
 class UT2k4MainMenu extends UT2K4GUIPage;
 
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-//#exec OBJ LOAD FIlE=2K4Menus.utx
-// end if _RO_
+#exec OBJ LOAD FILE=InterfaceContent.utx
+#exec OBJ LOAD FIlE=2K4Menus.utx
 #exec OBJ LOAD FIlE=ROMenuSounds.uax
 /*
 	Variable Name Legend
@@ -375,11 +372,7 @@ function bool MyOnDraw(Canvas Canvas)
 	            Canvas.Style=5;
 	            Canvas.SetDrawColor(255,255,255,FButton.Tag);
 	            Canvas.SetPos(0,fButton.ActualTop());
-// if _RO_
-				Canvas.DrawTilePartialStretched(none,x2,FButton.ActualHeight());
-// else
-//				Canvas.DrawTilePartialStretched(material'Highlight',x2,FButton.ActualHeight());
-// end if _RO_
+				Canvas.DrawTilePartialStretched(material'Highlight',x2,FButton.ActualHeight());
             }
         }
     }
@@ -441,8 +434,7 @@ defaultproperties
     OnReopen=MainReopened
 
 	Begin Object Class=BackgroundImage Name=PageBackground
-		// ifndef _RO_
-		//Image=material'2K4Menus.Controls.mmbgnd'
+		Image=material'2K4Menus.Controls.mmbgnd'
 		ImageStyle=ISTY_Scaled
 		ImageRenderStyle=MSTY_Alpha
         X1=0
@@ -452,8 +444,7 @@ defaultproperties
 	End Object
 
 	Begin Object Class=GUIImage Name=iPanHuge
-		// ifndef _RO_
-		//Image=material'2K4Menus.MainMenu.PanHuge'
+		Image=material'2K4Menus.MainMenu.PanHuge'
 		ImageStyle=ISTY_Scaled
 		ImageRenderStyle=MSTY_Alpha
 		ImageColor=(R=255,G=255,B=255,A=40)
@@ -466,8 +457,7 @@ defaultproperties
 	End Object
 
 	Begin Object Class=GUIImage Name=iPanBig
-		// ifndef _RO_
-		//Image=material'2K4Menus.MainMenu.PanBig'
+		Image=material'2K4Menus.MainMenu.PanBig'
 		ImageStyle=ISTY_Scaled
 		ImageRenderStyle=MSTY_Alpha
 		ImageColor=(R=255,G=255,B=255,A=75)
@@ -479,8 +469,7 @@ defaultproperties
 	End Object
 
 	Begin Object Class=GUIImage Name=iPanSmall
-		// ifndef _RO_
-		//Image=material'2K4Menus.MainMenu.PanSmall'
+		Image=material'2K4Menus.MainMenu.PanSmall'
 		ImageStyle=ISTY_Scaled
 		ImageRenderStyle=MSTY_Alpha
 		ImageColor=(R=255,G=255,B=255,A=255)
@@ -504,8 +493,7 @@ defaultproperties
 	End Object
 
 	Begin Object Class=GUIImage Name=ImgUT2Logo
-		// ifndef _RO_
-		//Image=material'2K4Menus.MainMenu.2K4Logo'
+		Image=material'2K4Menus.MainMenu.2K4Logo'
 		ImageStyle=ISTY_Scaled
 		ImageRenderStyle=MSTY_Alpha
 		ImageColor=(R=255,G=255,B=255,A=255)
@@ -529,8 +517,7 @@ defaultproperties
 
 	Begin Object Class=GUIImage Name=ImgTV
 //		Image=material'2K4Menus.MainMenu.ActionFB'
-	// ifndef _RO_
-//		Image=material'ULogo.MainMenu.CornerMenuFinal'
+		Image=material'ULogo.MainMenu.CornerMenuFinal'
 		ImageStyle=ISTY_Scaled
 		WinWidth=0.500000
 		WinHeight=0.668619
@@ -691,14 +678,11 @@ defaultproperties
 	bDisconnectOnOpen=true
  	CharFade=0
  	// ifndef _RO_
-    //CharShots(0)=material'2K4Menus.MainMenu.Char01'
-    //CharShots(1)=material'2K4Menus.MainMenu.Char02'
-    //CharShots(2)=material'2K4Menus.MainMenu.Char03'
+    CharShots(0)=material'2K4Menus.MainMenu.Char01'
+    CharShots(1)=material'2K4Menus.MainMenu.Char02'
+    CharShots(2)=material'2K4Menus.MainMenu.Char03'
     NewNewsMsg="  (New Update Available)"
-    // if _RO_
-    MenuSong=""
-    //else
-    //MenuSong="KR-UT2004-Menu"
+    MenuSong="KR-UT2004-Menu"
     FireWallTitle="Important"
     FireWallMsg="It has been determined that the Window's Firewall is enabled and that UT2004 is not yet authorized to connect to the internet.  Authorization is required in order to use the online components of the game.  Please refer to the README.TXT for more information."
 }

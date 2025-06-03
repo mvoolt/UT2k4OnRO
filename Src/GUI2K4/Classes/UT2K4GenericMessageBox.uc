@@ -45,20 +45,13 @@ defaultproperties
 		WinLeft=0.400000
 		WinTop=0.549479
 		OnClick=InternalOnClick
-// if _RO_
-         StyleName="SelectButton"
-// end if _RO_
 	End Object
     b_Ok=OKButton
 
 	Begin Object class=GUILabel Name=DialogText
 		Caption="WARNING"
 		TextALign=TXTA_Center
-// if _RO_
-   		StyleName="TextLabel"
-// else
-//   		StyleName="TextButton"
-// end if _RO_
+   		StyleName="TextButton"
 		FontScale=FNS_Large
 		WinWidth=0.884722
 		WinHeight=0.042149

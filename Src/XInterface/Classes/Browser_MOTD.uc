@@ -44,10 +44,8 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner)
 		SetTimer(0, false); // Stop it going back to ready from a previous timer!
 	}
 	Controls[2].bBoundToParent=false;
-	// if _RO_
-	GUILabel(Controls[2]).Caption = "Red Orchestra"@VersionString@PlayerOwner().Level.ROVersion;
-	//else
-	//GUILabel(Controls[2]).Caption = "UT2004"@VersionString@PlayerOwner().Level.EngineVersion;
+
+	GUILabel(Controls[2]).Caption = "UT2004"@VersionString@PlayerOwner().Level.EngineVersion;
 }
 
 function MyReceivedMOTDData( MasterServerClient.EMOTDResponse Command, string Data )

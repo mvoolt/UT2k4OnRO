@@ -1,9 +1,7 @@
 class TestImagePage extends TestPageBase;
 
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_
+#exec OBJ LOAD FILE=InterfaceContent.utx
+
 
 var automated GUIImage i_Test;
 var automated moComboBox co_Style, co_Align, co_Select, co_Render;
@@ -416,15 +414,10 @@ defaultproperties
 	bRequire640x480=True
 	bCaptureInput=True
 
-// if _RO_
-/*
-// end if _RO_
 	Images(0)="PlayerPictures.cEgyptFemaleBA"
 	Images(1)="InterfaceContent.Menu.bg07"
 	Images(2)="2K4Menus.Controls.menuBackground2"
 	Images(3)="2K4Menus.Controls.popupBorder_b"
 	Images(4)="2K4Menus.Controls.editbox2_b"
-// if _RO_
-*/
-// end if _RO_
+
 }

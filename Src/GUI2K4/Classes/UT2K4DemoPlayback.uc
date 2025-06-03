@@ -54,38 +54,25 @@ function bool PlayPauseClick(GUIComponent Sender)
 	if ( bIsPaused )	// We are paused
 	{
 		bIsPaused=false;
-// if _RO_
-		b_PlayPause.Images[0]=Texture'InterfaceArt_tex.Demo_controls.PauseBlurry';
-		b_PlayPause.Images[1]=Texture'InterfaceArt_tex.Demo_controls.PauseBlurry';
-		b_PlayPause.Images[2]=Texture'InterfaceArt_tex.Demo_controls.PauseBlurry';
-		b_PlayPause.Images[3]=Texture'InterfaceArt_tex.Demo_controls.PauseBlurry';
-		b_PlayPause.Images[4]=Texture'InterfaceArt_tex.Demo_controls.PauseBlurry';
-// else
-//		b_PlayPause.Images[0]=material'PauseBlurry';
-//		b_PlayPause.Images[1]=material'PauseWatched';
-//		b_PlayPause.Images[2]=material'PauseWatched';
-//		b_PlayPause.Images[3]=material'PausePressed';
-//		b_PlayPause.Images[4]=material'PauseBlurry';
-// end if _RO_
+
+		b_PlayPause.Images[0]=material'PauseBlurry';
+		b_PlayPause.Images[1]=material'PauseWatched';
+		b_PlayPause.Images[2]=material'PauseWatched';
+		b_PlayPause.Images[3]=material'PausePressed';
+		b_PlayPause.Images[4]=material'PauseBlurry';
 		PlayerOwner().Level.Pauser = None;
 
 	}
 	else
 	{
 		bIsPaused=true;
-// if _RO_
-		b_PlayPause.Images[0]=Texture'InterfaceArt_tex.Demo_controls.PlayBlurry';
-		b_PlayPause.Images[1]=Texture'InterfaceArt_tex.Demo_controls.PlayBlurry';
-		b_PlayPause.Images[2]=Texture'InterfaceArt_tex.Demo_controls.PlayBlurry';
-		b_PlayPause.Images[3]=Texture'InterfaceArt_tex.Demo_controls.PlayBlurry';
-		b_PlayPause.Images[4]=Texture'InterfaceArt_tex.Demo_controls.PlayBlurry';
-// else
-//		b_PlayPause.Images[0]=material'PlayBlurry';
-//		b_PlayPause.Images[1]=material'PlayWatched';
-//		b_PlayPause.Images[2]=material'PlayWatched';
-//		b_PlayPause.Images[3]=material'PlayPressed';
-//		b_PlayPause.Images[4]=material'PlayBlurry';
-// end if _RO_
+
+		b_PlayPause.Images[0]=material'PlayBlurry';
+		b_PlayPause.Images[1]=material'PlayWatched';
+		b_PlayPause.Images[2]=material'PlayWatched';
+		b_PlayPause.Images[3]=material'PlayPressed';
+		b_PlayPause.Images[4]=material'PlayBlurry';
+
 		PlayerOwner().Level.Pauser = PlayerOwner().PlayerReplicationInfo;
 	}
 	return true;
@@ -131,19 +118,11 @@ DefaultProperties
 		WinHeight=0.800000
 		WinLeft=0.013750
 		WinTop=0.1
-// if _RO_
-		Images(0)=Texture'InterfaceArt_tex.Demo_controls.StopBlurry'
-		Images(1)=Texture'InterfaceArt_tex.Demo_controls.StopBlurry'
-		Images(2)=Texture'InterfaceArt_tex.Demo_controls.StopBlurry'
-		Images(3)=Texture'InterfaceArt_tex.Demo_controls.StopBlurry'
-		Images(4)=Texture'InterfaceArt_tex.Demo_controls.StopBlurry'
-// else
-//		Images(0)=material'2k4menus.AVPlayer.StopBlurry'
-//		Images(1)=material'2k4menus.AVPlayer.StopWatched'
-//		Images(2)=material'2k4menus.AVPlayer.StopWatched'
-//		Images(3)=material'2k4menus.AVPlayer.StopPressed'
-//		Images(4)=material'2k4menus.AVPlayer.StopBlurry'
-// end if _RO_
+		Images(0)=material'2k4menus.AVPlayer.StopBlurry'
+		Images(1)=material'2k4menus.AVPlayer.StopWatched'
+		Images(2)=material'2k4menus.AVPlayer.StopWatched'
+		Images(3)=material'2k4menus.AVPlayer.StopPressed'
+		Images(4)=material'2k4menus.AVPlayer.StopBlurry'
 		bBoundToParent=true
 		bScaleToParent=true
 		TabOrder=0
@@ -156,19 +135,11 @@ DefaultProperties
 		WinHeight=0.800000
 		WinLeft=0.055000
 		WinTop=0.1
-// if _RO_
-		Images(0)=Texture'InterfaceArt_tex.Demo_controls.PauseBlurry'
-		Images(1)=Texture'InterfaceArt_tex.Demo_controls.PauseBlurry'
-		Images(2)=Texture'InterfaceArt_tex.Demo_controls.PauseBlurry'
-		Images(3)=Texture'InterfaceArt_tex.Demo_controls.PauseBlurry'
-		Images(4)=Texture'InterfaceArt_tex.Demo_controls.PauseBlurry'
-// else
-//		Images(0)=material'2k4menus.AVPlayer.PauseBlurry'
-//		Images(1)=material'2k4menus.AVPlayer.PauseWatched'
-//		Images(2)=material'2k4menus.AVPlayer.PauseWatched'
-//		Images(3)=material'2k4menus.AVPlayer.PausePressed'
-//		Images(4)=material'2k4menus.AVPlayer.PauseBlurry'
-// end if _RO_
+		Images(0)=material'2k4menus.AVPlayer.PauseBlurry'
+		Images(1)=material'2k4menus.AVPlayer.PauseWatched'
+		Images(2)=material'2k4menus.AVPlayer.PauseWatched'
+		Images(3)=material'2k4menus.AVPlayer.PausePressed'
+		Images(4)=material'2k4menus.AVPlayer.PauseBlurry'
 		bBoundToParent=true
 		bScaleToParent=true
 		TabOrder=1
@@ -181,19 +152,11 @@ DefaultProperties
 		WinHeight=0.8
 		WinLeft=0.097500
 		WinTop=0.1
-// if _RO_
-		Images(0)=Texture'InterfaceArt_tex.Demo_controls.NextTrackBlurry'
-		Images(1)=Texture'InterfaceArt_tex.Demo_controls.NextTrackBlurry'
-		Images(2)=Texture'InterfaceArt_tex.Demo_controls.NextTrackBlurry'
-		Images(3)=Texture'InterfaceArt_tex.Demo_controls.NextTrackBlurry'
-		Images(4)=Texture'InterfaceArt_tex.Demo_controls.NextTrackBlurry'
-// else
-//		Images(0)=material'2k4menus.AVPlayer.NextTrackBlurry'
-//		Images(1)=material'2k4menus.AVPlayer.NextTrackWatched'
-//		Images(2)=material'2k4menus.AVPlayer.NextTrackWatched'
-//		Images(3)=material'2k4menus.AVPlayer.NextTrackPressed'
-//		Images(4)=material'2k4menus.AVPlayer.NextTrackBlurry'
-// end if _RO_
+		Images(0)=material'2k4menus.AVPlayer.NextTrackBlurry'
+		Images(1)=material'2k4menus.AVPlayer.NextTrackWatched'
+		Images(2)=material'2k4menus.AVPlayer.NextTrackWatched'
+		Images(3)=material'2k4menus.AVPlayer.NextTrackPressed'
+		Images(4)=material'2k4menus.AVPlayer.NextTrackBlurry'
 		bBoundToParent=true
 		bScaleToParent=true
 		TabOrder=2

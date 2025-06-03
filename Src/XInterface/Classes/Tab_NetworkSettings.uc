@@ -234,11 +234,8 @@ defaultproperties
 	Controls(3)=moEditBox'OnlineStatsPW'
 
 	Begin Object class=GUILabel Name=OnlineStatDesc
-// if _RO_
-		Caption="Red Orchestra Global Stats"
-// else
-//		Caption="UT2003 Global Stats"
-// end if _RO_
+		Caption="UT2003 Global Stats"
+
 		TextALign=TXTA_Center
 		TextFont="UT2HeaderFont"
 		TextColor=(R=230,G=200,B=0,A=255)
@@ -326,10 +323,7 @@ defaultproperties
 	NetSpeedText(2)="Cable/ADSL"
 	NetSpeedText(3)="LAN/T1"
 
-// if _RO_
-	StatsURL="http://redorchestragame.com/"
-// else
-//	StatsURL="http://ut2003stats.epicgames.com/"
-// end if _RO_
+	StatsURL="http://ut2003stats.epicgames.com/"
+
     EpicIDMsg="Your Unique id is:"
 }

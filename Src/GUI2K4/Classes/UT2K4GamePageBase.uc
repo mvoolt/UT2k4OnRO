@@ -8,10 +8,7 @@
 
 class UT2K4GamePageBase extends UT2k4MainPage;
 
-// if _RO_
-// else
-//#exec OBJ LOAD FILE=InterfaceContent.utx
-// end if _RO_
+#exec OBJ LOAD FILE=InterfaceContent.utx
 
 var() localized string PageCaption;
 var() config bool bUseTabs;

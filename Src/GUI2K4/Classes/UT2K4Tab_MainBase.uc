@@ -143,11 +143,7 @@ defaultproperties
 		WinLeft=0.039258
 		WinTop=0.949531
     	Caption="Only Official Maps"
-// if _RO_
-    	Hint="Hides all maps not created by Tripwire."
-// else
-//    	Hint="Hides all maps not created by Epic or Digital Extremes."
-// end if _RO_
+    	Hint="Hides all maps not created by Epic or Digital Extremes."
     	TabOrder=1
     	bAutoSizeCaption=True
     	ComponentWidth=0.9

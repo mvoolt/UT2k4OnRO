@@ -506,11 +506,7 @@ DefaultProperties
 		WinLeft=0.571664
 		WinTop=0.200564
 		Caption="Difficulty"
-// if _RO
-		Hint="Select the desired game difficulty level to search for.  If you are new to Red Orchestra, it is recommended that you choose the \"Untrained\" setting."
-// else
-//		Hint="Select the desired game difficulty level to search for.  If you are new to UT2004, it is recommended that you choose the \"Beginner\" setting."
-// end if _RO_
+		Hint="Select the desired game difficulty level to search for.  If you are new to UT2004, it is recommended that you choose the \"Beginner\" setting."
 		CaptionWidth=0.3
 		ComponentWidth=-1
 		TabOrder=1
@@ -561,7 +557,7 @@ DefaultProperties
 		WinTop=0.300283
 		RenderWeight=0.001
 		ImageStyle=ISTY_Stretched
-		Image=Texture'InterfaceArt_tex.Menu.changeme_texture' //material'2K4Menus.NewControls.Display99'
+		Image=material'2K4Menus.NewControls.Display99'
 		bScaleToParent=True
 		bBoundToParent=True
 	End Object
