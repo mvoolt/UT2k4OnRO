@@ -15,3 +15,8 @@ there's probably a better way to do this, also i've not tested those instruction
 6. To prepare for compiling, also remove all .u files in **steamapps/common/Red Orchestra/System/**
 7. open a command prompt and go to **steamapps/common/Red Orchestra/** folder, do `ucc make` and pray it works, maybe compile it few times. There's like ghosts here you have to attempt to compile multiple times before you can successfully build it
 8. If it still doesn't work, feel free to ask me.
+
+## more screenies
+![image](https://github.com/user-attachments/assets/49889600-b54a-4a3f-b884-ce1fffdf5566)
+
+![image](https://github.com/user-attachments/assets/ef39e4c4-af02-4f83-930d-143ef757f4f5)
